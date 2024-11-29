@@ -1,0 +1,237 @@
+
+.w-100 {
+    width: 100% !important;
+}
+
+.w-98 {
+    width: 98%;
+}
+
+.label-txt-width-new, .label-txt-width-new-new {
+    width: 40% !important;
+}
+
+@media (max-width:767px) {
+    .hidden-xs {
+        display: none !important;
+    }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+    .hidden-sm {
+        display: none !important;
+    }
+}
+
+@media (min-width:992px) and (max-width:1199px) {
+    .hidden-md {
+        display: none !important;
+    }
+}
+
+@media (min-width:1200px) {
+    .hidden-lg {
+        display: none !important;
+    }
+}
+
+.btn-group-vertical > .btn-group:after, .btn-toolbar:after, .clearfix:after, .container-fluid:after, .container:after, .dl-horizontal dd:after, .form-horizontal .form-group:after, .modal-footer:after, .modal-header:after, .nav:after, .navbar-collapse:after, .navbar-header:after, .navbar:after, .pager:after, .panel-body:after, .row:after {
+    clear: both;
+}
+
+
+.in-w-55 {
+    width: 57%;
+}
+
+
+/* Forms Starts */
+.inline {
+    margin-bottom: 10px;
+}
+
+.clearfix:after, .clearfix:before {
+    display: table;
+    content: " ";
+}
+
+.clearfix:after {
+    clear: both;
+}
+/* Forms Ends */
+
+
+
+.txt-cnt {
+    text-align: center !important;
+}
+
+.txt-left {
+    text-align: left !important;
+}
+
+.txt-right {
+    text-align: right !important;
+}
+
+
+.select-drop {
+    border:0px; margin-top:10px !important; margin-left:4px; border-bottom:1px #9e9e9e solid; padding-bottom:5px !important; width:94% !important; text-wrap:initial;
+}
+
+.select-drop option {
+            border-bottom: 1px #acacac solid; 
+           
+            font-size: 14px; padding:10px 3px !important; height:20px;
+        }
+
+            .select-drop option:hover {
+                background-color: #bde0ed !important;
+            }
+
+
+
+
+/* Margins & paddings */
+.m-0 {
+    margin: 0px;
+}
+
+.m-auto {
+    margin: 0px auto;
+}
+
+.m-t-5 {
+    margin-top: 5px;
+}
+
+.m-t-10 {
+    margin-top: 10px;
+}
+
+.m-t-15 {
+    margin-top: 15px !important;
+}
+
+.m-t-20 {
+    margin-top: 20px;
+}
+
+.m-l-10 {
+    margin-left: 10px;
+}
+
+.m-b-20 {
+    margin-bottom: 20px !important;
+}
+
+
+
+
+/* Fonts & Colors */
+.white, .white a {
+    color: #fff !important;
+}
+
+.black {
+    color: #000;
+}
+
+.f-capt {
+    text-transform: capitalize;
+}
+
+.f-upper {
+    text-transform: uppercase;
+}
+
+.f-n {
+    font-weight: normal;
+}
+
+.f-b {
+    font-weight: bold;
+}
+
+
+
+.f-12 {
+    font-size: 12px;
+}
+
+.f-14 {
+    font-size: 14px;
+}
+
+.f-16 {
+    font-size: 16px;
+}
+
+
+
+
+/* Navigation Menu */
+.collapsible-accordion > .collapsible-header {
+    background-color: #808080;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+
+
+.btn-new {
+    padding:7px 14px !important; font-size:14px; margin-top:5px; border-radius:4px; background-color:#FA864C; color:#fff; border:0px; text-transform:uppercase;
+}
+
+.btn-new:hover {
+    background-color:#B0420B;
+}
+
+
+
+
+
+
+/* Blocks */
+
+.block {
+    width: 100%;
+    float: left;
+    border: 1px #d1d1d1 solid;
+    margin-bottom: 20px;
+}
+
+.block-liner {
+    border-top:10px #CFD03D solid; border-top-left-radius:5px; border-top-right-radius:5px;
+}
+
+    .block > .head {
+        width: 100%;
+        float: left;
+        padding: 5px 8px;
+        background-color: #dedf67;
+        color: #494900;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: bold;
+        border-bottom: 1px #cece8d solid;
+    }
+
+    .block > .content {
+        width: 100%;
+        float: left;
+        padding: 8px 8px 15px 8px !important;
+        margin-top: 12px;
+    }
+
+/* Latest ADDED */
+
+.bg-white {
+    background-color: #fff;
+}

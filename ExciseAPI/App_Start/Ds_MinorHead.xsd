@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Ds_MinorHead" targetNamespace="http://tempuri.org/Ds_MinorHead.xsd" xmlns:mstns="http://tempuri.org/Ds_MinorHead.xsd" xmlns="http://tempuri.org/Ds_MinorHead.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Ds_MinorHead" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="Ds_MinorHead" msprop:Generator_DataSetName="Ds_MinorHead">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Ds_MinorHead" msprop:Generator_TableClassName="Ds_MinorHeadDataTable" msprop:Generator_TableVarName="tableDs_MinorHead" msprop:Generator_TablePropName="_Ds_MinorHead" msprop:Generator_RowDeletingName="Ds_MinorHeadRowDeleting" msprop:Generator_RowChangingName="Ds_MinorHeadRowChanging" msprop:Generator_RowEvHandlerName="Ds_MinorHeadRowChangeEventHandler" msprop:Generator_RowDeletedName="Ds_MinorHeadRowDeleted" msprop:Generator_UserTableName="Ds_MinorHead" msprop:Generator_RowChangedName="Ds_MinorHeadRowChanged" msprop:Generator_RowEvArgName="Ds_MinorHeadRowChangeEvent" msprop:Generator_RowClassName="Ds_MinorHeadRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Minor_Head_Code" msprop:Generator_ColumnVarNameInTable="columnMinor_Head_Code" msprop:Generator_ColumnPropNameInRow="Minor_Head_Code" msprop:Generator_ColumnPropNameInTable="Minor_Head_CodeColumn" msprop:Generator_UserColumnName="Minor_Head_Code" type="xs:string" minOccurs="0" />
+              <xs:element name="Minor_Head_Desc" msprop:Generator_ColumnVarNameInTable="columnMinor_Head_Desc" msprop:Generator_ColumnPropNameInRow="Minor_Head_Desc" msprop:Generator_ColumnPropNameInTable="Minor_Head_DescColumn" msprop:Generator_UserColumnName="Minor_Head_Desc" type="xs:string" minOccurs="0" />
+              <xs:element name="Type_Man_Nm" msprop:Generator_ColumnVarNameInTable="columnType_Man_Nm" msprop:Generator_ColumnPropNameInRow="Type_Man_Nm" msprop:Generator_ColumnPropNameInTable="Type_Man_NmColumn" msprop:Generator_UserColumnName="Type_Man_Nm" type="xs:string" minOccurs="0" />
+              <xs:element name="Temp1" msprop:Generator_ColumnVarNameInTable="columnTemp1" msprop:Generator_ColumnPropNameInRow="Temp1" msprop:Generator_ColumnPropNameInTable="Temp1Column" msprop:Generator_UserColumnName="Temp1" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

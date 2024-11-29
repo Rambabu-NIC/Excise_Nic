@@ -1,0 +1,246 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.master.cs" Inherits="ExciseAPI.Home" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../Resources/vendor/bootstrap/css/bootstrap.min.css" />
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="../Resources/css/base.css" />
+    <link rel="stylesheet" href="../Resources/css/base-responsive.css" />
+    <link rel="stylesheet" href="../Resources/css/animate.min.css" />
+    <link rel="stylesheet" href="../Resources/css/slicknav.min.css" />
+    <link rel="stylesheet" href="../Resources/css/font-awesome.min.css" />
+    <link href="../Resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <script src="Resources/js/popper.min.js"></script>
+    <style type="text/css">
+        .hit {
+            display: inline-block;
+            font-weight: bold;
+            font-size: large;
+            padding: 6px 6px 4px;
+            border-radius: 3px;
+            background: #212f3d;
+            color: White;
+            text-align: center;
+            margin: 20px auto;
+        }
+    </style>
+    <style>
+        .table-n {
+            border: 1px solid black; /*height: 463px;*/
+            width: 441px;
+        }
+
+            .table-n tbody > tr {
+                height: 40px;
+            }
+    </style>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+
+<body>
+    <!-- Header -->
+    <div class="wrapper clearfix" id="b-header">
+        <%--<div class="float-left d-flex h-100">
+			<img src="images/emblem-dark.png" class="align-self-center b-emblem-image" alt="emblem of india logo">
+		</div>
+
+		<div class="float-left d-flex h-100">
+			<strong class="align-self-center pl-3" style="font-size:18px"><span>मंत्रालय का नाम</span> <br><span>Ministry name goes here</span></strong>
+		</div>--%>
+        <div class="wrapper">
+            <div id="pcoded" class="pcoded load-height">
+                <div class="pcoded-inner-content" style="background-color: #01444e; margin-top: 2px; padding-left: 25px;">
+                    <div class="row align-items-end">
+                        <div class="col-lg-1">
+                            <div class="page-header-title">
+                                <div class="d-inline">
+                                    <img class="main-img" src="Assets/images/tg.png" alt="Telangana-Logo" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-1">
+                            <div class="page-header-title">
+                                <div class="d-inline">
+                                    <img class="main-img" src="Assets/images/deptlogo.png" alt="digitalindia-Logo" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7" style="padding-top: 0px; color: White;">
+                            <h1 style="margin-top: 0px; text-align: center">
+                                <font size="6px">Government of Telangana</font></h1>
+                            <h1 style="text-align: center">
+                                <font size="6px">Prohibition & Excise Department</font>
+                            </h1>
+                            <%--<h1>
+                        <font size="3px">Excise Revenue Collection System</font>
+                    </h1>--%>
+                        </div>
+                        <%--   <div class="col-lg-1">
+                            <div class="page-header-title">
+                                <div class="d-inline">
+                                    <img  class="main-img" src="Assets/images/cm1.png" alt="Telangana-Logo" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-1" style="margin-left: 50px">
+                            <div class="page-header-title">
+                                <div class="d-inline">
+                                    <img  class="main-img" src="Assets/images/em1.png" alt="Telangana-Logo" />
+                                </div>
+                            </div>
+                        </div>--%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style type="text/css">
+        .bar1, .bar2, .bar3 {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+
+        .change .bar1 {
+            -webkit-transform: rotate(-45deg) translate(-5px, 5px);
+            transform: rotate(-45deg) translate(-5px, 5px);
+        }
+
+        .change .bar2 {
+            opacity: 0;
+        }
+
+        .change .bar3 {
+            -webkit-transform: rotate(45deg) translate(-5px, -7px);
+            transform: rotate(45deg) translate(-5px, -7px);
+        }
+    </style>
+
+
+    <!-- Global Navigation -->
+    <div class="globalnav-bg">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-xl navbar-dark px-0">
+                <div class="d-flex w-100 b-nav-mobile">
+                    <button class="navbar-toggler align-self-center b-btn-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" onclick="myFunction(this)">
+                        <span style="display: none;">Menu</span>
+                        <div>
+                            <div class="bar1"></div>
+                            <div class="bar2"></div>
+                            <div class="bar3"></div>
+                        </div>
+                    </button>
+                    <button class="btn btn-outline-light align-self-center ml-auto b-btn-login" type="button" data-toggle="modal">
+                        <a style="font-size: large; font-weight: bold; color: #fff" class="nav-link" href="Login.aspx">Log In</a>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav main-menu d-flex">
+                        <li class="nav-item d-block"><a href="Index.aspx" class="nav-link">Home</a> </li>
+                        <li class="nav-item d-block"><a href="#" class="nav-link">Home</a> </li>
+                        <li class="nav-item d-block"><a href="#" class="nav-link">About Us</a> </li>
+                        <li class="nav-item d-block"><a href="#" class="nav-link">Citizen Charter</a> </li>
+                        <li class="nav-item d-block"><a href="#" class="nav-link">RTI</a> </li>
+                        <li class="nav-item d-block"><a href="#" class="nav-link">Key Contacts</a> </li>
+                        <li class="nav-item d-block"><a href="#" class="nav-link">Acts & Rules</a> </li>
+                        <li class="nav-item d-block"><a href="../Event/G.O_PermitRegistration.pdf" class="nav-link">Go's & Circulars</a> </li>
+                        <li class="nav-item d-block"><a href="#" class="nav-link">FAQ's</a> </li>
+                        <li class="nav-item d-block"><a href="#" class="nav-link">Contact Us</a> </li>
+                        <li class="nav-item d-block">
+                            <a href="RDLCReports/UserManual_Retailers.pdf" class="nav-link">EODB</a>
+                        </li>
+                        
+
+                        <li class="nav-item d-block ml-auto b-loginbut" data-toggle="modal" data-target="#login-modal">
+                            <a class="nav-link" href="Login.aspx">Log In</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        function myFunction(x) {
+            x.classList.toggle("change");
+        }
+    </script>
+    <form id="form1" runat="server">
+        <asp:ScriptManager runat="server">
+        </asp:ScriptManager>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="Resources/vendor/jquery/jquery.min.js"></script>
+    <script src="Resources/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="Resources/js/jquery.slicknav.min.js"></script>
+    <script src="Assets/Scripts/shaa256.js"></script>
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#backtotop').click(function () {
+                $("html, body").animate({ scrollTop: 0 }, 600);
+                return false;
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".b-navdropdown-click").click(function () {
+                if ($(".b-navdropdown").hasClass("hide")) {
+                    $(".b-navdropdown").addClass("show");
+                    $(".b-navdropdown").removeClass("hide");
+                    // $(".b-icon-up").show();
+                    // $(".b-icon-down").hide();
+                }
+                else if ($(".b-navdropdown").hasClass("show")) {
+                    $(".b-navdropdown").addClass("hide");
+                    $(".b-navdropdown").removeClass("show");
+                    // $(".b-icon-down").show();
+                    // $(".b-icon-up").hide();
+                }
+            });
+        });
+
+
+
+    </script>
+
+
+
+</body>
+</html>

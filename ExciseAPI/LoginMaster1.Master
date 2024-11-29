@@ -1,0 +1,169 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LoginMaster1.master.cs" Inherits="ExciseAPI.LoginMaster1" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Prohibition & Excise Department</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="NewStyles/assets/img/tg.png" rel="icon">
+    <link href="NewStyles/assets/img/tg.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="NewStyles/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="NewStyles/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="NewStyles/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <%--<link href="NewStyles/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="NewStyles/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="NewStyles/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="NewStyles/assets/vendor/simple-datatables/style.css" rel="stylesheet">--%>
+
+    <!-- Template Main CSS File -->
+    <link href="NewStyles/assets/css/style.css" rel="stylesheet" />
+    <link href="NewStyles/assets/css/cardstyles.css" rel="stylesheet" />
+    <script src="NewStyles/assets/js/shaa256.js"></script>
+    <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Updated: Jul 27 2023 with Bootstrap v5.3.1
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <style type="text/css">
+            .top-right {
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 10px; /* Adjust padding if needed */
+            }
+
+                .top-right img {
+                    max-width: 100px; /* Adjust width as necessary */
+                    height: auto;
+                }
+                .header-top{
+                transition: all 0.5s;
+    z-index: 997;
+    height: 80px;
+    box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
+    background-color: #fff;
+    }
+        </style>
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+        </asp:ScriptManager>
+        <!-- ======= Header ======= -->
+        <header id="header" class="header fixed-top d-flex align-items-center">
+
+            <div class="d-flex align-items-center justify-content-between">
+                <a href="index.aspx" class="logo d-flex align-items-center">
+                    <img src="NewStyles/assets/img/tg.png" alt="">
+                    <span class="d-none d-lg-block">Government of Telangana Prohibition & Excise Department</span>
+
+                </a>
+            </div>
+            <!-- End Logo -->
+            
+
+            <div class="d-flex align-items-center justify-content-between">
+                <a href="index.aspx" class="logo d-flex align-items-center">
+                    <%--<img src="NewStyles/assets/img/tg.png" alt="">--%>
+                    <img src="Assets/images/deptlogo.png" />
+                </a>
+            </div>
+            
+
+        </header>
+        <!-- End Header -->
+       
+        <section class="section dashboard header-top fixed-top d-flex align-items-center" style="margin-top:6%; background-color:#0ac8cf">
+        <nav id="DivMenu" runat="server" class="navbar navbar-expand-lg navbar-inverse navbar-fixed-top py-1 ">
+             <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav main-menu d-flex">
+                        <li class="nav-item d-block"><a href="Index.aspx" class="nav-link">Home</a> </li>
+                        <li class="nav-item d-block"><a href="#" class="nav-link">About Us</a> </li>
+                        <li class="nav-item d-block"><a href="#" class="nav-link">Citizen Charter</a> </li>
+                        <li class="nav-item d-block"><a href="#" class="nav-link">RTI</a> </li>
+                        <li class="nav-item d-block"><a href="#" class="nav-link">Key Contacts</a> </li>
+                        <li class="nav-item d-block"><a href="#" class="nav-link">Acts & Rules</a> </li>
+                        <li class="nav-item d-block"><a href="../Event/G.O_PermitRegistration.pdf" class="nav-link">Go's & Circulars</a> </li>
+                        <li class="nav-item d-block"><a href="#" class="nav-link">FAQ's</a> </li>
+                        <li class="nav-item d-block"><a href="#" class="nav-link">Contact Us</a> </li>
+                        <li class="nav-item d-block">
+                            <a href="RDLCReports/UserManual_Retailers.pdf" class="nav-link">Retailer User Manual</a>
+                        </li>
+                        
+
+                        <li class="nav-item d-block ml-auto b-loginbut" data-toggle="modal" data-target="#login-modal">
+                            <a class="nav-link" href="Login.aspx">Log In</a>
+                        </li>
+                    </ul>
+                </div>
+        </nav>
+             </section>
+         
+      
+
+      <main id="main" class="main" style="margin-left:0px !important; margin-top:8% !important;">
+            <section class="section dashboard" style="overflow-x:hidden;overflow-y:hidden;">
+                <div class="container-fluid content-pad" style="padding-bottom: 0px; margin-top: 8px;">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                </div>
+
+                <div class="container-fluid content-pad" style="padding-bottom: 0px; margin-top: 8px;">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+                </div>
+            </section>
+         </main>
+    </form>
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="copyright">
+            &copy; Copyright <strong><span>NIC</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+            Designed by <a href="https://bootstrapmade.com/">NIC</a>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <%--    <script src="../NewStyles/assets/vendor/apexcharts/apexcharts.min.js"></script>--%>
+    <script src="../NewStyles/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <%--    <script src="../NewStyles/assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="../NewStyles/assets/vendor/echarts/echarts.min.js"></script>
+    <script src="../NewStyles/assets/vendor/quill/quill.min.js"></script>
+    <script src="../NewStyles/assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="../NewStyles/assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="../NewStyles/assets/vendor/php-email-form/validate.js"></script>--%>
+
+    <!-- Template Main JS File -->
+    <script src="~/NewStyles/assets/js/main.js"></script>
+
+
+
+</body>
+
+</html>

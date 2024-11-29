@@ -1,0 +1,87 @@
+body {
+    background-color: #fff !important;
+}
+
+
+.wlcm-block {
+    background-image:url(../Images-New/DB-Welcome-Bg.jpg)
+}
+
+.user-pic {
+    padding: 0px;
+}
+
+.user-pic img {
+    height: 77px !important; margin-right:10px;
+}
+
+
+
+.highlight-box {
+    overflow: hidden;
+    background-color: rgba(255,255,255,1);
+    border: 0px solid #bababa;
+    border-radius: 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+    .highlight-box h2 {
+        margin: 0; color:#000; background:url(../Images-New/Report-Icon.png) #ADD8E6 no-repeat left;
+        font-weight: 700;
+        font-size: 14px;        
+        border: 1px solid white;
+        border-bottom: 1px solid #e1e1db; text-transform:uppercase;
+        padding: 6px 0px 7px 40px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .highlight-box .label {
+        color: #696c6e; border-bottom:1px #dcdcdc solid;
+        padding: 0px !important; width:48%; margin:0px auto;
+        font-weight: normal; 
+        padding:12px 0px !important;
+    }
+
+
+
+.user-icon {
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px#888;
+    box-shadow: 0 0 5px #888;
+    height: 120px;
+    border-radius: 10px;
+}
+
+
+
+@media (max-width:768px) {
+    .user-pic {
+    padding: 5px;
+}
+    .highlight-box {
+        margin-bottom: 20px !important;
+    }
+    .highlight-box .label {
+        width:99%;
+    }
+
+}
+
+@media (min-width:769px) and (max-width:992px) {
+    .log {
+        font-size: 12px; padding-top:25px; font-weight:bold;
+    }
+    .highlight-box > .label > .font, .highlight-box > .label > .font-label{
+        font-size:12px !important;
+    }
+     .highlight-box > .label > .font-label{
+        font-size:12px !important; padding-left:20px;
+    }
+}
+
+@media (min-width:993px)  {
+    .log {
+        font-size: 14px; padding-top:25px; font-weight:normal;
+    }
+}

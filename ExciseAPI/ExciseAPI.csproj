@@ -1,0 +1,3646 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DCFE7B87-321B-4762-8125-B032B284FE6E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExciseAPI</RootNamespace>
+    <AssemblyName>ExciseAPI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <PublishDatabases>true</PublishDatabases>
+    <IncludeIisSettings>false</IncludeIisSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.3.0.0\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml.Framework, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.Framework.3.0.0\lib\net40\DocumentFormat.OpenXml.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.13.3\lib\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.4\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.4\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.4\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.2.2\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.2.2\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.2.2\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.2.2\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.2.2\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.2.2\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WebForms.10.0.40219.1\lib\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="QRCoder, Version=1.3.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="QRCoder.Unity, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\QRCoder.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DataVisualization.Design" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.3.7\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.3.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.4\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Admin\AbstractRpt.aspx" />
+    <Content Include="Admin\AdminChallanUpdate.aspx" />
+    <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Admin\DownloadPaymentDetails.aspx" />
+    <Content Include="Admin\EventPermitDashboard.aspx" />
+    <Content Include="Admin\Genrate_TextPayment.aspx" />
+    <Content Include="Admin\HOA.aspx" />
+    <Content Include="Admin\InstallementMaster.aspx" />
+    <Content Include="Admin\Manufacture.aspx" />
+    <Content Include="Admin\Mst_ManufMinorH.aspx" />
+    <Content Include="Admin\Mst_ManufSH.aspx" />
+    <Content Include="Admin\Mst_TypeOfManufacturing.aspx" />
+    <Content Include="Admin\Rpt_User_Creation.aspx" />
+    <Content Include="Admin\Supplier.aspx" />
+    <Content Include="Admin\Treasury_Service.aspx" />
+    <Content Include="Admin\TSBCLDashboard.aspx" />
+    <Content Include="Admin\TypeDuties.aspx" />
+    <Content Include="Admin\TypeOfPayment.aspx" />
+    <Content Include="Admin\Type_DutiesFee.aspx" />
+    <Content Include="Admin\User_Creation.aspx" />
+    <Content Include="ApplicantRegistration.aspx" />
+    <Content Include="App_Start\Ds_HOA.xsc">
+      <DependentUpon>Ds_HOA.xsd</DependentUpon>
+    </Content>
+    <Content Include="App_Start\Ds_HOA.xss">
+      <DependentUpon>Ds_HOA.xsd</DependentUpon>
+    </Content>
+    <Content Include="App_Start\Ds_MinorHead.xsc">
+      <DependentUpon>Ds_MinorHead.xsd</DependentUpon>
+    </Content>
+    <Content Include="App_Start\Ds_MinorHead.xss">
+      <DependentUpon>Ds_MinorHead.xsd</DependentUpon>
+    </Content>
+    <Content Include="App_Start\Ds_PaymentDtls.xsc">
+      <DependentUpon>Ds_PaymentDtls.xsd</DependentUpon>
+    </Content>
+    <Content Include="App_Start\Ds_PaymentDtls.xss">
+      <DependentUpon>Ds_PaymentDtls.xsd</DependentUpon>
+    </Content>
+    <Content Include="App_Start\Reg_Appli.xsc">
+      <DependentUpon>Reg_Appli.xsd</DependentUpon>
+    </Content>
+    <Content Include="App_Start\Reg_Appli.xss">
+      <DependentUpon>Reg_Appli.xsd</DependentUpon>
+    </Content>
+    <Content Include="Assets\cpImg\cpImage.aspx" />
+    <Content Include="Assets\images\44.gif" />
+    <Content Include="Assets\images\cm.png" />
+    <Content Include="Assets\images\cm1.png" />
+    <Content Include="Assets\images\delete.PNG" />
+    <Content Include="Assets\images\deptlogo.png" />
+    <Content Include="Assets\images\digital.png" />
+    <Content Include="Assets\images\download.jpg" />
+    <Content Include="Assets\images\edit.PNG" />
+    <Content Include="Assets\images\em1.png" />
+    <Content Include="Assets\images\excel.gif" />
+    <Content Include="Assets\images\ExcelImage.jpeg" />
+    <Content Include="Assets\images\ias.png" />
+    <Content Include="Assets\images\ias1.png" />
+    <Content Include="Assets\images\left_quote.gif" />
+    <Content Include="Assets\images\logo.png" />
+    <Content Include="Assets\images\logo1.png" />
+    <Content Include="Assets\images\LOGO2.png" />
+    <Content Include="Assets\images\logout.PNG" />
+    <Content Include="Assets\images\minister.png" />
+    <Content Include="Assets\images\Minus.png" />
+    <Content Include="Assets\images\new.gif" />
+    <Content Include="Assets\images\PDF.png" />
+    <Content Include="Assets\images\Plus.png" />
+    <Content Include="Assets\images\RecaptchaLogo.png" />
+    <Content Include="Assets\images\right_quote.gif" />
+    <Content Include="Assets\images\tg.png" />
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\AspNet.ScriptManager.bootstrap.dll" />
+    <Content Include="bin\AspNet.ScriptManager.jQuery.dll" />
+    <Content Include="bin\BouncyCastle.Crypto.dll" />
+    <Content Include="bin\DocumentFormat.OpenXml.dll" />
+    <Content Include="bin\DocumentFormat.OpenXml.Framework.dll" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Excise_BE.dll" />
+    <Content Include="bin\Excise_DAL.dll" />
+    <Content Include="bin\itextsharp.dll" />
+    <Content Include="bin\Microsoft.AspNet.FriendlyUrls.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Core.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Owin.dll" />
+    <Content Include="bin\Microsoft.AspNet.Web.Optimization.WebForms.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.Owin.dll" />
+    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Cookies.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Google.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.OAuth.dll" />
+    <Content Include="bin\Microsoft.ScriptManager.MSAjax.dll" />
+    <Content Include="bin\Microsoft.ScriptManager.WebForms.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Owin.dll" />
+    <Content Include="bin\QRCoder.dll" />
+    <Content Include="bin\QRCoder.Unity.dll" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\csi.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="bin\roslyn\System.AppContext.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.StackTrace.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="bin\System.Net.Http.Formatting.dll" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Http.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.dll" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Webpages.Deployment.dll" />
+    <Content Include="bin\System.Web.Webpages.dll" />
+    <Content Include="bin\System.Web.Webpages.Razor.dll" />
+    <Content Include="bin\WebGrease.dll" />
+    <Content Include="Brewery.aspx" />
+    <Content Include="ChangePasswordS.aspx" />
+    <Content Include="Circulars.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="DashboardInfo.aspx" />
+    <Content Include="Depot\DepotWise_RetailerReport.aspx" />
+    <Content Include="Depot\DEPOTDashboard.aspx" />
+    <Content Include="Depot\Ledger_Upload.aspx" />
+    <Content Include="Depot\SalesProceedPendingPaymentReport.aspx" />
+    <Content Include="Depot\Sales_ProceedByDepot.aspx" />
+    <Content Include="DistGazette.aspx" />
+    <Content Include="Depot\SalesProceedReport.aspx" />
+    <Content Include="DPEO\DepeoEventPermission.aspx" />
+    <Content Include="DPEO\DPEOEvent_Report.aspx" />
+    <Content Include="DPEO\DPEORSPEntry.aspx" />
+    <Content Include="DPEO\DPEODashboard.aspx" />
+    <Content Include="DPEO_Admin\ChangePassword.aspx" />
+    <Content Include="DPEO_Admin\Dashboard.aspx" />
+    <Content Include="DPEO_Admin\DistrictRpt.aspx" />
+    <Content Include="DPEO_Admin\DistrictWiseAbstract.aspx" />
+    <Content Include="DPEO_Admin\DPEORestPassword.aspx" />
+    <Content Include="DPEO_Admin\EventPermitSearch.aspx" />
+    <Content Include="DPEO_Admin\ExciseDistrictRpt.aspx" />
+    <Content Include="DPEO_Admin\ExciseDPEORpt.aspx" />
+    <Content Include="DPEO_Admin\ExciseSHORpt.aspx" />
+    <Content Include="DPEO_Admin\ExciseStationRpt.aspx" />
+    <Content Include="DPEO_Admin\FeeDetails.aspx" />
+    <Content Include="DPEO_Admin\Header.ascx" />
+    <Content Include="DPEO_Admin\Menu.ascx" />
+    <Content Include="ECMS\ComplaintStatusReport.aspx" />
+    <Content Include="ECMS\ControlRoomForm.aspx" />
+    <Content Include="ECMS\DC_Form.aspx" />
+    <Content Include="ECMS\EnquiryForm.aspx" />
+    <Content Include="ECMS\Public_Complaint_Form.aspx" />
+    <Content Include="ECMS\ViewComplaints_ControlRoom.aspx" />
+    <Content Include="EODB\A3A.aspx" />
+    <Content Include="EODB\AdminReport.aspx" />
+    <Content Include="EODB\ApplicationsReport.aspx" />
+    <Content Include="EODB\ARSIII.aspx" />
+    <Content Include="EODB\B1.aspx" />
+    <Content Include="EODB\Bar1A.aspx" />
+    <Content Include="EODB\BSectionForms.aspx" />
+    <Content Include="EODB\CSection.aspx" />
+    <Content Include="EODB\D1P%28GSection%29.aspx" />
+    <Content Include="EODB\D1R%28GSection%29.aspx" />
+    <Content Include="EODB\D1_P.aspx" />
+    <Content Include="EODB\D1_R.aspx" />
+    <Content Include="EODB\DM1.aspx" />
+    <Content Include="EODB\DSXVII.aspx" />
+    <Content Include="EODB\DS_XI_Application.aspx" />
+    <Content Include="EODB\GSection.aspx" />
+    <Content Include="EODB\Home.aspx" />
+    <Content Include="EODB\IHA1.aspx" />
+    <Content Include="EODB\IHA2.aspx" />
+    <Content Include="EODB\M1.aspx" />
+    <Content Include="EODB\M1_Preview.aspx" />
+    <Content Include="EODB\M2.aspx" />
+    <Content Include="EODB\M4.aspx" />
+    <Content Include="EODB\M5.aspx" />
+    <Content Include="EODB\MicroBrewery_MB1.aspx" />
+    <Content Include="EODB\Molasses_M4.aspx" />
+    <Content Include="EODB\RS_III.aspx" />
+    <Content Include="EODB\RS_II_ApplicationForm.aspx" />
+    <Content Include="EODB\Type_Manufacturer.aspx" />
+    <Content Include="EODB\Type_Of_Retailers.aspx" />
+    <Content Include="EODB\View_M1Details.aspx" />
+    <Content Include="EODB\W1.aspx" />
+    <Content Include="EODB\WebForm1.aspx" />
+    <Content Include="Error.aspx" />
+    <Content Include="ErrorPage.aspx" />
+    <Content Include="Event\ACKEventReg.aspx" />
+    <Content Include="Event\Ack_EventReg.aspx" />
+    <Content Include="Event\AdditionalPayment.aspx" />
+    <Content Include="Event\ApplicationPayment_Update.aspx" />
+    <Content Include="Event\ApplicationStatus.aspx" />
+    <Content Include="Event\DiffPaymentDtls.aspx" />
+    <Content Include="Event\DistrictWisePermitDetails.aspx" />
+    <Content Include="Event\DownloadPermission.aspx" />
+    <Content Include="Event\EditEventRegistration.aspx" />
+    <Content Include="Event\EoDBDashboard.aspx" />
+    <Content Include="Event\EventPermit_Issued_Rejected_Report.aspx" />
+    <Content Include="Event\EventRegistration.aspx" />
+    <Content Include="Event\EventSelection.aspx" />
+    <Content Include="Event\EventStatus.aspx" />
+    <Content Include="Event\EventStatus_org.aspx" />
+    <Content Include="Event\Event_Update.aspx" />
+    <Content Include="Event\Financial_Year_Event_PermitsReport.aspx" />
+    <Content Include="Event\PaymentDtls.aspx" />
+    <Content Include="Event\PaymentView.aspx" />
+    <Content Include="Event\Sample.aspx" />
+    <Content Include="Event\UploadDoc.aspx" />
+    <Content Include="Event\Verify_permit.aspx" />
+    <Content Include="Event\Verify_Scan.aspx" />
+    <Content Include="Event\EventUpdate_New.aspx" />
+    <Content Include="Event\WebForm1.aspx" />
+    <Content Include="Excise-Logo.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="ForgotPassword.aspx" />
+    <Content Include="F_Section.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Event\G.O_PermitRegistration.pdf" />
+    <Content Include="Event\Procedure-EventPermit.pdf" />
+    <Content Include="GoList.aspx" />
+    <Content Include="Home_org.aspx" />
+    <Content Include="Index.aspx" />
+    <Content Include="InformationWizard.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Login1.aspx" />
+    <Content Include="NewStyles\assets\css\cardstyles.css" />
+    <Content Include="NewStyles\assets\js\shaa256.js" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\apexcharts.amd.js" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\apexcharts.common.js" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\apexcharts.css" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\apexcharts.esm.js" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\apexcharts.js" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\apexcharts.min.js" />
+    <Content Include="NewStyles\assets\vendor\chart.js\chart.js" />
+    <Content Include="NewStyles\assets\vendor\chart.js\chart.umd.js" />
+    <Content Include="NewStyles\assets\vendor\chart.js\chunks\helpers.segment.js" />
+    <Content Include="NewStyles\assets\vendor\chart.js\controllers\controller.bar.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\controllers\controller.bubble.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\controllers\controller.doughnut.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\controllers\controller.line.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\controllers\controller.pie.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\controllers\controller.polarArea.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\controllers\controller.radar.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\controllers\controller.scatter.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\controllers\index.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\core\core.adapters.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\core\core.animation.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\core\core.animations.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\core\core.animations.defaults.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\core\core.animator.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\core\core.config.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\core\core.controller.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\core\core.datasetController.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\core\core.defaults.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\core\core.element.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\core\core.interaction.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\core\core.layouts.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\core\core.layouts.defaults.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\core\core.plugins.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\core\core.registry.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\core\core.scale.autoskip.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\core\core.scale.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\core\core.scale.defaults.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\core\core.ticks.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\core\core.typedRegistry.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\core\index.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\elements\element.arc.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\elements\element.bar.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\elements\element.line.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\elements\element.point.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\elements\index.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\helpers.js" />
+    <Content Include="NewStyles\assets\vendor\chart.js\helpers\helpers.canvas.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\helpers\helpers.collection.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\helpers\helpers.color.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\helpers\helpers.config.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\helpers\helpers.config.types.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\helpers\helpers.core.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\helpers\helpers.curve.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\helpers\helpers.dom.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\helpers\helpers.easing.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\helpers\helpers.extras.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\helpers\helpers.interpolation.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\helpers\helpers.intl.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\helpers\helpers.math.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\helpers\helpers.options.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\helpers\helpers.rtl.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\helpers\helpers.segment.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\helpers\index.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\index.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\index.umd.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\platform\index.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\platform\platform.base.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\platform\platform.basic.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\platform\platform.dom.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\plugins\index.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\plugins\plugin.colors.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\plugins\plugin.decimation.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\plugins\plugin.filler\filler.drawing.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\plugins\plugin.filler\filler.helper.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\plugins\plugin.filler\filler.options.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\plugins\plugin.filler\filler.segment.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\plugins\plugin.filler\filler.target.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\plugins\plugin.filler\filler.target.stack.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\plugins\plugin.filler\index.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\plugins\plugin.filler\simpleArc.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\plugins\plugin.legend.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\plugins\plugin.subtitle.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\plugins\plugin.title.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\plugins\plugin.tooltip.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\scales\index.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\scales\scale.category.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\scales\scale.linear.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\scales\scale.linearbase.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\scales\scale.logarithmic.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\scales\scale.radialLinear.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\scales\scale.time.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\scales\scale.timeseries.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\types.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\types\animation.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\types\basic.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\types\color.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\types\geometric.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\types\index.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\types\layout.d.ts" />
+    <Content Include="NewStyles\assets\vendor\chart.js\types\utils.d.ts" />
+    <Content Include="NewStyles\assets\vendor\echarts\echarts.common.js" />
+    <Content Include="NewStyles\assets\vendor\echarts\echarts.common.min.js" />
+    <Content Include="NewStyles\assets\vendor\echarts\echarts.esm.js" />
+    <Content Include="NewStyles\assets\vendor\echarts\echarts.esm.min.js" />
+    <Content Include="NewStyles\assets\vendor\echarts\echarts.js" />
+    <Content Include="NewStyles\assets\vendor\echarts\echarts.min.js" />
+    <Content Include="NewStyles\assets\vendor\echarts\echarts.simple.js" />
+    <Content Include="NewStyles\assets\vendor\echarts\echarts.simple.min.js" />
+    <Content Include="NewStyles\assets\vendor\echarts\extension\bmap.js" />
+    <Content Include="NewStyles\assets\vendor\echarts\extension\bmap.min.js" />
+    <Content Include="NewStyles\assets\vendor\echarts\extension\dataTool.js" />
+    <Content Include="NewStyles\assets\vendor\echarts\extension\dataTool.min.js" />
+    <Content Include="NewStyles\assets\vendor\quill\quill.bubble.css" />
+    <Content Include="NewStyles\assets\vendor\quill\quill.core.css" />
+    <Content Include="NewStyles\assets\vendor\quill\quill.core.js" />
+    <Content Include="NewStyles\assets\vendor\quill\quill.js" />
+    <Content Include="NewStyles\assets\vendor\quill\quill.min.js" />
+    <Content Include="NewStyles\assets\vendor\quill\quill.snow.css" />
+    <Content Include="NewStyles\assets\vendor\remixicon\remixicon.css" />
+    <Content Include="NewStyles\assets\vendor\remixicon\remixicon.svg" />
+    <Content Include="NewStyles\assets\vendor\remixicon\remixicon.symbol.svg" />
+    <Content Include="NewStyles\assets\vendor\simple-datatables\simple-datatables.js" />
+    <Content Include="NewStyles\assets\vendor\simple-datatables\style.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\icons\default\icons.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\icons\default\icons.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\icons\default\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\license.txt" />
+    <Content Include="NewStyles\assets\vendor\tinymce\models\dom\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\models\dom\model.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\models\dom\model.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\accordion\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\accordion\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\accordion\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\advlist\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\advlist\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\anchor\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\anchor\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\autolink\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\autolink\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\autoresize\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\autoresize\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\autosave\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\autosave\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\charmap\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\charmap\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\codesample\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\codesample\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\codesample\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\code\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\code\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\directionality\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\directionality\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\emoticons\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\emoticons\js\emojiimages.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\emoticons\js\emojiimages.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\emoticons\js\emojis.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\emoticons\js\emojis.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\emoticons\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\fullscreen\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\fullscreen\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\ar.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\bg_BG.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\ca.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\cs.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\da.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\de.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\el.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\en.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\es.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\eu.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\fa.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\fi.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\fr_FR.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\he_IL.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\hi.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\hr.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\hu_HU.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\id.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\it.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\ja.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\kk.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\ko_KR.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\ms.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\nb_NO.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\nl.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\pl.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\pt_BR.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\pt_PT.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\ro.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\ru.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\sk.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\sl_SI.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\sv_SE.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\th_TH.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\tr.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\uk.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\vi.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\zh_CN.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\js\i18n\keynav\zh_TW.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\help\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\image\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\image\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\importcss\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\importcss\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\insertdatetime\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\insertdatetime\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\link\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\link\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\lists\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\lists\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\media\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\media\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\nonbreaking\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\nonbreaking\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\pagebreak\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\pagebreak\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\preview\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\preview\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\quickbars\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\quickbars\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\quickbars\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\save\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\save\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\searchreplace\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\searchreplace\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\table\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\table\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\template\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\template\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\template\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\visualblocks\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\visualblocks\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\visualchars\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\visualchars\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\wordcount\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\wordcount\plugin.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\content\dark\content.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\content\dark\content.min.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\content\default\content.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\content\default\content.min.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\content\document\content.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\content\document\content.min.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\content\tinymce-5-dark\content.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\content\tinymce-5-dark\content.min.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\content\tinymce-5\content.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\content\tinymce-5\content.min.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\content\writer\content.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\content\writer\content.min.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\oxide-dark\content.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\oxide-dark\content.inline.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\oxide-dark\content.inline.min.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\oxide-dark\content.min.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\oxide-dark\skin.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\oxide-dark\skin.min.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\oxide-dark\skin.shadowdom.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\oxide-dark\skin.shadowdom.min.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\oxide\content.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\oxide\content.inline.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\oxide\content.inline.min.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\oxide\content.min.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\oxide\skin.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\oxide\skin.min.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\oxide\skin.shadowdom.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\oxide\skin.shadowdom.min.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\tinymce-5-dark\content.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\tinymce-5-dark\content.inline.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\tinymce-5-dark\content.inline.min.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\tinymce-5-dark\content.min.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\tinymce-5-dark\skin.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\tinymce-5-dark\skin.min.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\tinymce-5-dark\skin.shadowdom.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\tinymce-5-dark\skin.shadowdom.min.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\tinymce-5\content.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\tinymce-5\content.inline.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\tinymce-5\content.inline.min.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\tinymce-5\content.min.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\tinymce-5\skin.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\tinymce-5\skin.min.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\tinymce-5\skin.shadowdom.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\skins\ui\tinymce-5\skin.shadowdom.min.css" />
+    <Content Include="NewStyles\assets\vendor\tinymce\themes\silver\index.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\themes\silver\theme.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\themes\silver\theme.min.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\tinymce.d.ts" />
+    <Content Include="NewStyles\assets\vendor\tinymce\tinymce.js" />
+    <Content Include="NewStyles\assets\vendor\tinymce\tinymce.min.js" />
+    <Content Include="NICAdmin\Pending_Challan_Update.aspx" />
+    <Content Include="NICAdmin\RetailersInstallmentReport.aspx" />
+    <Content Include="NICAdmin\Signature.aspx" />
+    <Content Include="NICAdmin\Supplier_Payments_StateWise.aspx" />
+    <Content Include="Renewals\BAREndorsement.aspx" />
+    <Content Include="Renewals\BARRenewal.aspx" />
+    <Content Include="Renewals\BARRenewalProceedings.aspx" />
+    <Content Include="Renewals\DepartmentActionGrid.aspx" />
+    <Content Include="Renewals\DepartmentApplications.aspx" />
+    <Content Include="Renewals\FWDRenewalApplications.aspx" />
+    <Content Include="Renewals\FWDRenewalApplicationsGrid.aspx" />
+    <Content Include="Renewals\MBEndorsement.aspx" />
+    <Content Include="Renewals\MBRenewal.aspx" />
+    <Content Include="Renewals\ViewBARRenewal.aspx" />
+    <Content Include="Renewals\ViewMBRenewal.aspx" />
+    <Content Include="Renewals\ViewMBRenewalApplications.aspx" />
+    <Content Include="Renewals\ViewRenewalApplications.aspx" />
+    <Content Include="Retailer\ChangePassword_M.aspx" />
+    <Content Include="Scripts\css\dashboard1.css" />
+    <Content Include="Scripts\css\dashboard2.css" />
+    <Content Include="Scripts\img\graph\bar-graph.png" />
+    <Content Include="Scripts\js\boostrap_min_js.js" />
+    <Content Include="Scripts\js\chart.js" />
+    <Content Include="Scripts\js\chart1.js" />
+    <Content Include="Scripts\js\DashboardJS.js" />
+    <Content Include="SHO\WebForm1.aspx" />
+    <Content Include="Signature.aspx" />
+    <Content Include="Supplier\WebForm1.aspx" />
+    <Content Include="WebFormsss.aspx" />
+    <Content Include="Winery.aspx" />
+    <None Include="App_Data\PublishProfiles\Excise_Department.pubxml" />
+    <Content Include="Logout.aspx" />
+    <Content Include="MicroBrewery.aspx" />
+    <Content Include="Molasses.aspx" />
+    <Content Include="NewStyles\assets\css\style.css" />
+    <Content Include="NewStyles\assets\img\apple-touch-icon.png" />
+    <Content Include="NewStyles\assets\img\card.jpg" />
+    <Content Include="NewStyles\assets\img\favicon.png" />
+    <Content Include="NewStyles\assets\img\messages-1.jpg" />
+    <Content Include="NewStyles\assets\img\messages-2.jpg" />
+    <Content Include="NewStyles\assets\img\messages-3.jpg" />
+    <Content Include="NewStyles\assets\img\news-1.jpg" />
+    <Content Include="NewStyles\assets\img\news-2.jpg" />
+    <Content Include="NewStyles\assets\img\news-3.jpg" />
+    <Content Include="NewStyles\assets\img\news-4.jpg" />
+    <Content Include="NewStyles\assets\img\news-5.jpg" />
+    <Content Include="NewStyles\assets\img\not-found.svg" />
+    <Content Include="NewStyles\assets\img\product-1.jpg" />
+    <Content Include="NewStyles\assets\img\product-2.jpg" />
+    <Content Include="NewStyles\assets\img\product-3.jpg" />
+    <Content Include="NewStyles\assets\img\product-4.jpg" />
+    <Content Include="NewStyles\assets\img\product-5.jpg" />
+    <Content Include="NewStyles\assets\img\profile-img.jpg" />
+    <Content Include="NewStyles\assets\img\slides-1.jpg" />
+    <Content Include="NewStyles\assets\img\slides-2.jpg" />
+    <Content Include="NewStyles\assets\img\slides-3.jpg" />
+    <Content Include="NewStyles\assets\img\tg.png" />
+    <Content Include="NewStyles\assets\js\main.js" />
+    <Content Include="NewStyles\assets\scss\Readme.txt" />
+    <Content Include="NewStyles\assets\vendor\bootstrap-icons\bootstrap-icons.css" />
+    <Content Include="NewStyles\assets\vendor\bootstrap-icons\bootstrap-icons.min.css" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap-grid.rtl.css" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap-reboot.rtl.css" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap-utilities.css" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap-utilities.min.css" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap-utilities.rtl.css" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap.rtl.css" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap.rtl.min.css" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\js\bootstrap.esm.js" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\js\bootstrap.esm.min.js" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="NICAdmin\AbstractRpt.aspx" />
+    <Content Include="NICAdmin\AdminDashboard.aspx" />
+    <Content Include="NICAdmin\Challan_Transactiondetails.aspx" />
+    <Content Include="NICAdmin\ChangePassword.aspx" />
+    <Content Include="NICAdmin\CPEPayments_DueDatesReport.aspx" />
+    <Content Include="NICAdmin\Create_Retailer.aspx" />
+    <Content Include="NICAdmin\Dashboard.aspx" />
+    <Content Include="NICAdmin\Dashboard_ERCS.aspx" />
+    <Content Include="NICAdmin\Dashboard_ERCS_I.aspx" />
+    <Content Include="NICAdmin\Dashboard_Event.aspx" />
+    <Content Include="NICAdmin\DistrictExStationMapping.aspx" />
+    <Content Include="NICAdmin\DistrictRpt.aspx" />
+    <Content Include="NICAdmin\DistrictWiseAbstract.aspx" />
+    <Content Include="NICAdmin\DPEOJurisdictionFee.aspx" />
+    <Content Include="NICAdmin\DPEORestPassword.aspx" />
+    <Content Include="NICAdmin\EventPermitPaymentUpdateE.aspx" />
+    <Content Include="NICAdmin\EventPermitReport.aspx" />
+    <Content Include="NICAdmin\EventPermitSearch.aspx" />
+    <Content Include="NICAdmin\EventPermitWithPayment.aspx" />
+    <Content Include="NICAdmin\EventUpdate.aspx" />
+    <Content Include="NICAdmin\Event_Permits.aspx" />
+    <Content Include="NICAdmin\ExciseDistrictRpt.aspx" />
+    <Content Include="NICAdmin\ExciseDPEORpt.aspx" />
+    <Content Include="NICAdmin\ExciseSHORpt.aspx" />
+    <Content Include="NICAdmin\ExciseStationRpt.aspx" />
+    <Content Include="NICAdmin\ExciseStationWiseAbstract.aspx" />
+    <Content Include="NICAdmin\ExJuridictionMapping.aspx" />
+    <Content Include="NICAdmin\FeeDetails.aspx" />
+    <Content Include="NICAdmin\JurisdictionWiseFee.aspx" />
+    <Content Include="NICAdmin\Menu.ascx" />
+    <Content Include="NICAdmin\MultipleChallan.aspx" />
+    <Content Include="NICAdmin\PaymentDtls.aspx" />
+    <Content Include="NICAdmin\PaymentUpdate.aspx" />
+    <Content Include="NICAdmin\ExistingRetailerReport.aspx" />
+    <Content Include="NICAdmin\RetailerReport_Individual.aspx" />
+    <Content Include="NICAdmin\CTELintegration.aspx" />
+    <Content Include="NICAdmin\SupplierUpdate.aspx" />
+    <Content Include="NICAdmin\VerifiedTransactions.aspx" />
+    <Content Include="NICAdmin\Retailer_ResetPassword.aspx" />
+    <Content Include="NICAdmin\ShamshabadReport.aspx" />
+    <Content Include="NICAdmin\SP_Challan_Update.aspx" />
+    <Content Include="NICAdmin\SupplierReport.aspx" />
+    <Content Include="NICAdmin\User_Creation.aspx" />
+    <Content Include="NICAdmin\RetailersReport.aspx" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\ExciseAPI.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\ExciseAPI.csprojAssemblyReference.cache" />
+    <Content Include="Event\Events.Master" />
+    <Content Include="bin\roslyn\csc.exe.config" />
+    <Content Include="bin\roslyn\csc.rsp" />
+    <Content Include="bin\roslyn\csi.rsp" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\vbc.exe.config" />
+    <Content Include="bin\roslyn\vbc.rsp" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <None Include="App_Start\Ds_HOA.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Ds_HOA.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="App_Start\Ds_MinorHead.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Ds_MinorHead.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="App_Start\Ds_PaymentDtls.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Ds_PaymentDtls.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="App_Start\Reg_Appli.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Reg_Appli.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="bin\QRCoder.dll.refresh" />
+    <Content Include="bin\QRCoder.Unity.dll.refresh" />
+    <Content Include="Home.Master" />
+    <Content Include="LoginMaster1.Master" />
+    <Content Include="NewStyles\assets\vendor\bootstrap-icons\bootstrap-icons.json" />
+    <Content Include="NewStyles\assets\vendor\bootstrap-icons\bootstrap-icons.scss" />
+    <Content Include="NewStyles\assets\vendor\bootstrap-icons\fonts\bootstrap-icons.woff" />
+    <Content Include="NewStyles\assets\vendor\bootstrap-icons\fonts\bootstrap-icons.woff2" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap-utilities.css.map" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap-utilities.min.css.map" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap.rtl.css.map" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\css\bootstrap.rtl.min.css.map" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\js\bootstrap.esm.js.map" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\js\bootstrap.esm.min.js.map" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="NewStyles\assets\vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Event\Event.Master" />
+    <Content Include="EOB.Master" />
+    <Content Include="LoginMaster.Master" />
+    <Content Include="NewStyles\assets\vendor\quill\quill.min.js.map" />
+    <Content Include="NewStyles\assets\vendor\remixicon\remixicon.eot" />
+    <Content Include="NewStyles\assets\vendor\remixicon\remixicon.glyph.json" />
+    <Content Include="NewStyles\assets\vendor\remixicon\remixicon.less" />
+    <Content Include="NewStyles\assets\vendor\remixicon\remixicon.ttf" />
+    <Content Include="NewStyles\assets\vendor\remixicon\remixicon.woff" />
+    <Content Include="NewStyles\assets\vendor\remixicon\remixicon.woff2" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\ar.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\ca.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\cs.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\da.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\de.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\el.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\en.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\es.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\et.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\fa.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\fi.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\fr.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\he.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\hi.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\hr.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\hu.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\hy.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\id.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\it.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\ja.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\ka.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\ko.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\lt.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\lv.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\nb.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\nl.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\pl.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\pt-br.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\pt.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\rs.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\ru.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\se.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\sk.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\sl.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\sq.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\th.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\tr.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\ua.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\zh-cn.json" />
+    <Content Include="NewStyles\assets\vendor\apexcharts\locales\zh-tw.json" />
+    <Content Include="NewStyles\assets\vendor\chart.js\chart.cjs" />
+    <Content Include="NewStyles\assets\vendor\chart.js\chart.cjs.map" />
+    <Content Include="NewStyles\assets\vendor\chart.js\chart.js.map" />
+    <Content Include="NewStyles\assets\vendor\chart.js\chart.umd.js.map" />
+    <Content Include="NewStyles\assets\vendor\chart.js\chunks\helpers.segment.cjs" />
+    <Content Include="NewStyles\assets\vendor\chart.js\chunks\helpers.segment.cjs.map" />
+    <Content Include="NewStyles\assets\vendor\chart.js\chunks\helpers.segment.js.map" />
+    <Content Include="NewStyles\assets\vendor\chart.js\helpers.cjs" />
+    <Content Include="NewStyles\assets\vendor\chart.js\helpers.cjs.map" />
+    <Content Include="NewStyles\assets\vendor\chart.js\helpers.js.map" />
+    <Content Include="NewStyles\assets\vendor\echarts\echarts.common.js.map" />
+    <Content Include="NewStyles\assets\vendor\echarts\echarts.esm.js.map" />
+    <Content Include="NewStyles\assets\vendor\echarts\echarts.js.map" />
+    <Content Include="NewStyles\assets\vendor\echarts\echarts.simple.js.map" />
+    <Content Include="NewStyles\assets\vendor\echarts\extension\bmap.js.map" />
+    <Content Include="NewStyles\assets\vendor\echarts\extension\dataTool.js.map" />
+    <Content Include="NewStyles\assets\vendor\tinymce\bower.json" />
+    <Content Include="NewStyles\assets\vendor\tinymce\CHANGELOG.md" />
+    <Content Include="NewStyles\assets\vendor\tinymce\composer.json" />
+    <Content Include="NewStyles\assets\vendor\tinymce\package.json" />
+    <Content Include="NewStyles\assets\vendor\tinymce\README.md" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="Primary_Distillery.aspx" />
+    <Content Include="RDLCReports\Adilabad Gazette.pdf" />
+    <Content Include="RDLCReports\Adilabad.pdf" />
+    <Content Include="RDLCReports\ADILABAD_16.11.2021.pdf" />
+    <Content Include="RDLCReports\Adilabad_n.pdf" />
+    <Content Include="RDLCReports\ADILABAD_S.pdf" />
+    <Content Include="RDLCReports\Asifabad.pdf" />
+    <Content Include="RDLCReports\ASIFABAD_16.11.2021.pdf" />
+    <Content Include="RDLCReports\Bhadradri Kothagudem Gazette.pdf" />
+    <Content Include="RDLCReports\Bhadradri Kothagudem.pdf" />
+    <Content Include="RDLCReports\Bhupalpally.pdf" />
+    <Content Include="RDLCReports\BHUPALPALLY_16.11.2021.pdf" />
+    <Content Include="RDLCReports\BHUPALPALLY_S.pdf" />
+    <Content Include="RDLCReports\gadwal.pdf" />
+    <Content Include="RDLCReports\GADWAL_16.11.2021.pdf" />
+    <Content Include="RDLCReports\GADWAL_S.pdf" />
+    <Content Include="RDLCReports\hyd.pdf" />
+    <Content Include="RDLCReports\Hyderabad.pdf" />
+    <Content Include="RDLCReports\HYDERABAD_16.11.2021.pdf" />
+    <Content Include="RDLCReports\HYDERABAD_S.pdf" />
+    <Content Include="RDLCReports\JAGITIAL_16.11.2021.pdf" />
+    <Content Include="RDLCReports\JAGITIAL_S.pdf" />
+    <Content Include="RDLCReports\Jagtial.pdf" />
+    <Content Include="RDLCReports\JANAGAON_16.11.2021.pdf" />
+    <Content Include="RDLCReports\JANAGAON_S.pdf" />
+    <Content Include="RDLCReports\Jangaon.pdf" />
+    <Content Include="RDLCReports\Kamareddy.pdf" />
+    <Content Include="RDLCReports\KAMAREDDY_16.11.2021.pdf" />
+    <Content Include="RDLCReports\KAMAREDDY_S.pdf" />
+    <Content Include="RDLCReports\Karimnagar Gazette.pdf" />
+    <Content Include="RDLCReports\Karimnagar.pdf" />
+    <Content Include="RDLCReports\KARIMNAGAR_16.11.2021.pdf" />
+    <Content Include="RDLCReports\KARIMNAGAR_S.pdf" />
+    <Content Include="RDLCReports\KHAMMAM _16.11.2021.pdf" />
+    <Content Include="RDLCReports\Khammam.pdf" />
+    <Content Include="RDLCReports\KMM_S.pdf" />
+    <Content Include="RDLCReports\KOMARAM BHEEM ASIFABAD_S.pdf" />
+    <Content Include="RDLCReports\Kothagudem.pdf" />
+    <Content Include="RDLCReports\KOTHAGUDEM_16.11.2021.pdf" />
+    <Content Include="RDLCReports\KOTHAGUDEM_S.pdf" />
+    <Content Include="RDLCReports\mahabubabad.pdf" />
+    <Content Include="RDLCReports\MAHABUBABAD_16.11.2021.pdf" />
+    <Content Include="RDLCReports\MAHABUBABAD_S.pdf" />
+    <Content Include="RDLCReports\mahabubanagr.pdf" />
+    <Content Include="RDLCReports\MAHABUBNAGAR_16.11.2021.pdf" />
+    <Content Include="RDLCReports\MAHABUBNAGAR_S.pdf" />
+    <Content Include="RDLCReports\Malkajgiri.pdf" />
+    <Content Include="RDLCReports\MALKAJGIRI_16.11.2021.pdf" />
+    <Content Include="RDLCReports\MALKAJGIRI_S.pdf" />
+    <Content Include="RDLCReports\Mancherial Gazette.pdf" />
+    <Content Include="RDLCReports\Mancherial.pdf" />
+    <Content Include="RDLCReports\MANCHERIAL_16.11.2021.pdf" />
+    <Content Include="RDLCReports\MANCHERIAL_S.pdf" />
+    <Content Include="RDLCReports\Medak Gazette.pdf" />
+    <Content Include="RDLCReports\medak.pdf" />
+    <Content Include="RDLCReports\MEDAK_16.11.2021.pdf" />
+    <Content Include="RDLCReports\MEDAK_S.pdf" />
+    <Content Include="RDLCReports\Medchal.pdf" />
+    <Content Include="RDLCReports\MEDCHAL_16.11.2021.pdf" />
+    <Content Include="RDLCReports\MEDCHAL_S.pdf" />
+    <Content Include="RDLCReports\medchel.pdf" />
+    <Content Include="RDLCReports\Nagarkurnool Gazette.pdf" />
+    <Content Include="RDLCReports\Nagarkurnool.pdf" />
+    <Content Include="RDLCReports\NAGARKURNOOL_16.11.2021.pdf" />
+    <Content Include="RDLCReports\NAGARKURNOOL_S.pdf" />
+    <Content Include="RDLCReports\nalgonda.pdf" />
+    <Content Include="RDLCReports\NALGONDA_16.11.2021.pdf" />
+    <Content Include="RDLCReports\NALGONDA_S.pdf" />
+    <Content Include="RDLCReports\Nirmal Gazette.PDF" />
+    <Content Include="RDLCReports\Nirmal.pdf" />
+    <Content Include="RDLCReports\NIRMAL_16.11.2021.pdf" />
+    <Content Include="RDLCReports\NIRMAL_S.pdf" />
+    <Content Include="RDLCReports\Nizamabad Gazette.pdf" />
+    <Content Include="RDLCReports\Nizamabad.pdf" />
+    <Content Include="RDLCReports\NIZAMABAD_16.11.2021.pdf" />
+    <Content Include="RDLCReports\NIZAMABAD_S.pdf" />
+    <Content Include="RDLCReports\Peddapally Gazette.pdf" />
+    <Content Include="RDLCReports\Peddapally.pdf" />
+    <Content Include="RDLCReports\PEDDAPALLY_16.11.2021.pdf" />
+    <Content Include="RDLCReports\PEDDAPALLY_S.pdf" />
+    <Content Include="RDLCReports\Report_Payment.rdlc" />
+    <Content Include="RDLCReports\Rpt_HOA.rdlc" />
+    <Content Include="RDLCReports\Rpt_Mionrhead.rdlc" />
+    <Content Include="RDLCReports\Rpt_SApplicantPreview.rdlc" />
+    <Content Include="RDLCReports\Rpt_TempRegLicCertificate.rdlc" />
+    <Content Include="RDLCReports\Rpt_TempRegPRView.rdlc" />
+    <Content Include="RDLCReports\Sangareddy Gazette.pdf" />
+    <Content Include="RDLCReports\sangareddy.pdf" />
+    <Content Include="RDLCReports\SANGAREDDY_16.11.2021.pdf" />
+    <Content Include="RDLCReports\SANGAREDDY_S.pdf" />
+    <Content Include="RDLCReports\Saroornagar Gazette.pdf" />
+    <Content Include="RDLCReports\saroornagar.pdf" />
+    <Content Include="RDLCReports\SAROORNAGAR_16.11.2021.pdf" />
+    <Content Include="RDLCReports\SAROORNAGAR_S.pdf" />
+    <Content Include="RDLCReports\Secunderabad Gazzette.pdf" />
+    <Content Include="RDLCReports\secunderabad.pdf" />
+    <Content Include="RDLCReports\SECUNDERABAD_16.11.2021.pdf" />
+    <Content Include="RDLCReports\SECUNDERABAD_S.pdf" />
+    <Content Include="RDLCReports\shamshabad.pdf" />
+    <Content Include="RDLCReports\SHAMSHABAD_16.11.2021.pdf" />
+    <Content Include="RDLCReports\SHAMSHABAD_S.pdf" />
+    <Content Include="RDLCReports\Siddipet ..pdf" />
+    <Content Include="RDLCReports\Siddipet Gazette.pdf" />
+    <Content Include="RDLCReports\Siddipet.pdf" />
+    <Content Include="RDLCReports\SIDDIPET_16.11.2021.pdf" />
+    <Content Include="RDLCReports\SIDDIPET_S.pdf" />
+    <Content Include="RDLCReports\Sircilla.pdf" />
+    <Content Include="RDLCReports\SIRCILLA_16.11.2021.pdf" />
+    <Content Include="RDLCReports\SIRCILLA_S.pdf" />
+    <Content Include="RDLCReports\Suryapet District A4 Shop List.pdf" />
+    <Content Include="RDLCReports\Suryapet District Gazette%281%29.pdf" />
+    <Content Include="RDLCReports\suryapet.pdf" />
+    <Content Include="RDLCReports\SURYAPET_16.11.2021.pdf" />
+    <Content Include="RDLCReports\Suryapet_N.pdf" />
+    <Content Include="RDLCReports\SURYAPET_S.pdf" />
+    <Content Include="RDLCReports\Venues for Drawl of Lots.pdf" />
+    <Content Include="RDLCReports\Venues for Receipt of Applications.pdf" />
+    <Content Include="RDLCReports\Vikarabad Gazette.pdf" />
+    <Content Include="RDLCReports\vikarabad.pdf" />
+    <Content Include="RDLCReports\VIKARABAD_16.11.2021.pdf" />
+    <Content Include="RDLCReports\VIKARABAD_S.pdf" />
+    <Content Include="RDLCReports\wanaparthy.pdf" />
+    <Content Include="RDLCReports\WANAPARTHY_16.11.2021.pdf" />
+    <Content Include="RDLCReports\WANAPARTHY_S.pdf" />
+    <Content Include="RDLCReports\Warangal R.pdf" />
+    <Content Include="RDLCReports\Warangal U.pdf" />
+    <Content Include="RDLCReports\WARANGAL%28R%29_16.11.2021.pdf" />
+    <Content Include="RDLCReports\WARANGAL%28R%29_S.pdf" />
+    <Content Include="RDLCReports\WARANGAL%28U%29_16.11.2021.pdf" />
+    <Content Include="RDLCReports\WARANGAL%28U%29_S.pdf" />
+    <Content Include="RDLCReports\wrl-R.pdf" />
+    <Content Include="RDLCReports\wrl-u.pdf" />
+    <Content Include="RDLCReports\YADADRI BHUVANAGIRI_16.11.2021.pdf" />
+    <Content Include="RDLCReports\YADADRI BHUVANAGIRI_S.pdf" />
+    <Content Include="RDLCReports\Yadadri.pdf" />
+    <Content Include="RDLCReports\yadhadhribhuvanagiri.pdf" />
+    <Content Include="RDLCReports\DG\Adilabad.pdf" />
+    <Content Include="RDLCReports\DG\Bhadradri Kothagudem.pdf" />
+    <Content Include="RDLCReports\DG\Bhupalapally.pdf" />
+    <Content Include="RDLCReports\DG\Gadwal.pdf" />
+    <Content Include="RDLCReports\DG\Hyderabad.pdf" />
+    <Content Include="RDLCReports\DG\Jagtial.pdf" />
+    <Content Include="RDLCReports\DG\Jangaon.pdf" />
+    <Content Include="RDLCReports\DG\Kama Reddy.pdf" />
+    <Content Include="RDLCReports\DG\Karimnagar.pdf" />
+    <Content Include="RDLCReports\DG\Khammam.pdf" />
+    <Content Include="RDLCReports\DG\Kumrambheem Asifabad.pdf" />
+    <Content Include="RDLCReports\DG\Mahabubabad.pdf" />
+    <Content Include="RDLCReports\DG\Mahabubnagar.pdf" />
+    <Content Include="RDLCReports\DG\Malkajgiri.pdf" />
+    <Content Include="RDLCReports\DG\Mancherial.pdf" />
+    <Content Include="RDLCReports\DG\Medak.pdf" />
+    <Content Include="RDLCReports\DG\Medchal.pdf" />
+    <Content Include="RDLCReports\DG\Nagar Kurnool.pdf" />
+    <Content Include="RDLCReports\DG\Nalgonda.pdf" />
+    <Content Include="RDLCReports\DG\Nirmal.pdf" />
+    <Content Include="RDLCReports\DG\Nizamabad.pdf" />
+    <Content Include="RDLCReports\DG\Peddapally.pdf" />
+    <Content Include="RDLCReports\DG\Rajanna Sircilla.pdf" />
+    <Content Include="RDLCReports\DG\Sanga Reddy.pdf" />
+    <Content Include="RDLCReports\DG\Saroornagar.pdf" />
+    <Content Include="RDLCReports\DG\Secundrabad.pdf" />
+    <Content Include="RDLCReports\DG\Shamshabad.pdf" />
+    <Content Include="RDLCReports\DG\Siddipet.pdf" />
+    <Content Include="RDLCReports\DG\Suryapet.pdf" />
+    <Content Include="RDLCReports\DG\Vikarabad.pdf" />
+    <Content Include="RDLCReports\DG\Wanaparthy.pdf" />
+    <Content Include="RDLCReports\DG\Warangal Rural.pdf" />
+    <Content Include="RDLCReports\DG\Warangal Urban.pdf" />
+    <Content Include="RDLCReports\DG\Yadadri Bhuvanagiri.pdf" />
+    <Content Include="RDLCReports\SG\Adilabad.pdf" />
+    <Content Include="RDLCReports\SG\Bhadradri Kothagudem.pdf" />
+    <Content Include="RDLCReports\SG\gadwal.pdf" />
+    <Content Include="RDLCReports\SG\Hyderabad.pdf" />
+    <Content Include="RDLCReports\SG\Jagtial.pdf" />
+    <Content Include="RDLCReports\SG\Jangaon.pdf" />
+    <Content Include="RDLCReports\SG\Jayashankar Bhupalapally.pdf" />
+    <Content Include="RDLCReports\SG\Kama Reddy.pdf" />
+    <Content Include="RDLCReports\SG\Karimnagar.pdf" />
+    <Content Include="RDLCReports\SG\Khammam.pdf" />
+    <Content Include="RDLCReports\SG\Kumrambheem Asifabad.pdf" />
+    <Content Include="RDLCReports\SG\Mahabubabad.pdf" />
+    <Content Include="RDLCReports\SG\Mahabubnagar.pdf" />
+    <Content Include="RDLCReports\SG\Malkajgiri.pdf" />
+    <Content Include="RDLCReports\SG\Mancherial.pdf" />
+    <Content Include="RDLCReports\SG\Medak.pdf" />
+    <Content Include="RDLCReports\SG\Medchal.pdf" />
+    <Content Include="RDLCReports\SG\Nagar Kurnool.pdf" />
+    <Content Include="RDLCReports\SG\Nalgonda.pdf" />
+    <Content Include="RDLCReports\SG\Nirmal.pdf" />
+    <Content Include="RDLCReports\SG\Nizamabad.pdf" />
+    <Content Include="RDLCReports\SG\Peddapally.pdf" />
+    <Content Include="RDLCReports\SG\Rajanna Sircilla.pdf" />
+    <Content Include="RDLCReports\SG\Sanga Reddy.pdf" />
+    <Content Include="RDLCReports\SG\Saroornagar.pdf" />
+    <Content Include="RDLCReports\SG\Secundrabad.pdf" />
+    <Content Include="RDLCReports\SG\Shamshabad.pdf" />
+    <Content Include="RDLCReports\SG\Siddipet.pdf" />
+    <Content Include="RDLCReports\SG\Suryapet.pdf" />
+    <Content Include="RDLCReports\SG\Vikarabad.pdf" />
+    <Content Include="RDLCReports\SG\Wanaparthy.pdf" />
+    <Content Include="RDLCReports\SG\Warangal Rural.pdf" />
+    <Content Include="RDLCReports\SG\Warangal Urban.pdf" />
+    <Content Include="RDLCReports\SG\Yadadri Bhuvanagiri.pdf" />
+    <Content Include="RDLCReports\SP\Adilabad.pdf" />
+    <Content Include="RDLCReports\SP\AsifabadKB.pdf" />
+    <Content Include="RDLCReports\SP\BhupalapallyJS.pdf" />
+    <Content Include="RDLCReports\SP\Kamareddy.pdf" />
+    <Content Include="RDLCReports\SP\Nirmal.pdf" />
+    <Content Include="RDLCReports\A4 Shop Gazette Renotification of DPEO Adilabad.pdf" />
+    <Content Include="RDLCReports\AdilabadNew.pdf" />
+    <Content Include="RDLCReports\AdilabadNew_1.pdf" />
+    <Content Include="RDLCReports\Application Fee Payment Details.pdf" />
+    <Content Include="RDLCReports\Application form and Receipt_Entry pass.pdf" />
+    <Content Include="RDLCReports\Application Form.pdf" />
+    <Content Include="RDLCReports\AsifabadNew.pdf" />
+    <Content Include="RDLCReports\BhupalapllyNew.pdf" />
+    <Content Include="RDLCReports\Consolidated Renotification District Gazettes.pdf" />
+    <Content Include="RDLCReports\DocScanner Aug 4, 2023 6-44 PM.pdf" />
+    <Content Include="RDLCReports\DPEO%27s addresses and Venue for applications , Drawl of Lottery-1.pdf" />
+    <Content Include="RDLCReports\DPEO%27s addresses and Venue for applications , Drawl of Lottery.pdf" />
+    <Content Include="RDLCReports\DPEOaddressesandVenuefoapplicationsDrawlofLotteryN.pdf" />
+    <Content Include="RDLCReports\G.O.Ms.No.86-01.08.2023-Notification.pdf" />
+    <Content Include="RDLCReports\GadwalNew.pdf" />
+    <Content Include="RDLCReports\GO No. 98 - Allotment of Retail Liquor A4 Shops 2021-23 - Notification.pdf" />
+    <Content Include="RDLCReports\Guidelines for Allotment of Shops.pdf" />
+    <Content Include="RDLCReports\Guidelines_for_Allotment_of_Shops.pdf" />
+    <Content Include="RDLCReports\How to Apply.pdf" />
+    <Content Include="RDLCReports\HyderabadNew.pdf" />
+    <Content Include="RDLCReports\JagtialNew.pdf" />
+    <Content Include="RDLCReports\JangoanNew.pdf" />
+    <Content Include="RDLCReports\KamareddyNew.pdf" />
+    <Content Include="RDLCReports\KarimnagarNew.pdf" />
+    <Content Include="RDLCReports\MahabubnagarNew.pdf" />
+    <Content Include="RDLCReports\MalkajgiriNew.pdf" />
+    <Content Include="RDLCReports\MancherialNew.pdf" />
+    <Content Include="RDLCReports\NagarkurnoolNew.pdf" />
+    <Content Include="RDLCReports\NirmalNew.PDF" />
+    <Content Include="RDLCReports\NizambadNew.pdf" />
+    <Content Include="RDLCReports\PeddapallyNew.pdf" />
+    <Content Include="RDLCReports\Re-Notification Schedule for Allotment of A4 shops_2021-23.pdf" />
+    <Content Include="RDLCReports\Report_BIMApplicantDtls.rdlc" />
+    <Content Include="RDLCReports\Report_BIMPRApplicantDtls.rdlc" />
+    <Content Include="RDLCReports\Rpt_BIMApplicantRegDtls.rdlc" />
+    <Content Include="RDLCReports\Rpt_BIMPRView.rdlc" />
+    <Content Include="RDLCReports\Rpt_BIM_Remarks.rdlc" />
+    <Content Include="RDLCReports\Rpt_DoctorsList.rdlc" />
+    <Content Include="RDLCReports\Rpt_ExistingDtlsAck.rdlc" />
+    <Content Include="RDLCReports\Rpt_PRRegLicCertificate.rdlc" />
+    <Content Include="RDLCReports\Schedule of Allotment Process.pdf" />
+    <Content Include="RDLCReports\SiddipetNew.pdf" />
+    <Content Include="RDLCReports\SiricillaNew.pdf" />
+    <Content Include="RDLCReports\Venues for Drawl of Lots for Re-Notified Shops.pdf" />
+    <Content Include="RDLCReports\Venues for Receipt of Applications for Re-Notified Shops.pdf" />
+    <Content Include="RDLCReports\Venues for Receipt of Applications for Re-Notified Shops_1.pdf" />
+    <Content Include="RDLCReports\VikarabadNew.pdf" />
+    <Content Include="Resources\fonts\fffForward.ttf" />
+    <Content Include="Resources\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Resources\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Resources\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Resources\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Resources\vendor\fontawesome-free\webfonts\fa-brands-400.ttf" />
+    <Content Include="Resources\vendor\fontawesome-free\webfonts\fa-duotone-900.ttf" />
+    <Content Include="Resources\vendor\fontawesome-free\webfonts\fa-light-300.ttf" />
+    <Content Include="Resources\vendor\fontawesome-free\webfonts\fa-regular-400.ttf" />
+    <Content Include="Resources\vendor\fontawesome-free\webfonts\fa-solid-900.ttf" />
+    <Content Include="RDLCReports\UserManual_Retailers.pdf" />
+    <None Include="Scripts\jquery-3.1.0.intellisense.js" />
+    <Content Include="PrintPage.aspx" />
+    <Content Include="Resources\css\animate.min.css" />
+    <Content Include="Resources\css\base-responsive.css" />
+    <Content Include="Resources\css\base.css" />
+    <Content Include="Resources\css\dashboard.css" />
+    <Content Include="Resources\css\font-awesome.min.css" />
+    <Content Include="Resources\css\slicknav.min.css" />
+    <Content Include="Resources\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Resources\images\banner1.jpg" />
+    <Content Include="Resources\images\banner2.jpg" />
+    <Content Include="Resources\images\banner3.jpg" />
+    <Content Include="Resources\images\card-profile.png" />
+    <Content Include="Resources\images\carousel\carousel-bg.png" />
+    <Content Include="Resources\images\carousel\data-gov.png" />
+    <Content Include="Resources\images\carousel\digital-india.png" />
+    <Content Include="Resources\images\carousel\e-gazette.png" />
+    <Content Include="Resources\images\carousel\eci.png" />
+    <Content Include="Resources\images\carousel\ganhri.png" />
+    <Content Include="Resources\images\carousel\goidirectory.png" />
+    <Content Include="Resources\images\carousel\incredible-india.png" />
+    <Content Include="Resources\images\carousel\india-gov.png" />
+    <Content Include="Resources\images\carousel\makeinindia.png" />
+    <Content Include="Resources\images\carousel\mygov.png" />
+    <Content Include="Resources\images\carousel\myvisit-logo.png" />
+    <Content Include="Resources\images\carousel\pg-portal.png" />
+    <Content Include="Resources\images\carousel\pmnrf.png" />
+    <Content Include="Resources\images\digital-india.png" />
+    <Content Include="Resources\images\ebook.png" />
+    <Content Include="Resources\images\emblem-dark.png" />
+    <Content Include="Resources\images\gallery\1.jpg" />
+    <Content Include="Resources\images\gallery\2.jpg" />
+    <Content Include="Resources\images\gallery\3.jpg" />
+    <Content Include="Resources\images\gallery\4.jpg" />
+    <Content Include="Resources\images\gallery\5.jpg" />
+    <Content Include="Resources\images\icons\down-arrow.png" />
+    <Content Include="Resources\images\icons\ico-accessibility.png" />
+    <Content Include="Resources\images\icons\ico-site-search.png" />
+    <Content Include="Resources\images\icons\ico-sitemap.png" />
+    <Content Include="Resources\images\icons\ico-skip.png" />
+    <Content Include="Resources\images\icons\ico-social.png" />
+    <Content Include="Resources\images\inner-img\img1.jpg" />
+    <Content Include="Resources\images\inner-img\img2.jpg" />
+    <Content Include="Resources\images\minister.jpg" />
+    <Content Include="Resources\images\NIC.png" />
+    <Content Include="Resources\js\dashboard.js" />
+    <Content Include="Resources\js\jquery-ui.js" />
+    <Content Include="Resources\js\jquery.slicknav.min.js" />
+    <Content Include="Resources\js\npm.js" />
+    <Content Include="Resources\js\popper.min.js" />
+    <Content Include="Resources\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Resources\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Resources\vendor\charts\Chart.bundle.js" />
+    <Content Include="Resources\vendor\charts\Chart.bundle.min.js" />
+    <Content Include="Resources\vendor\charts\Chart.css" />
+    <Content Include="Resources\vendor\charts\Chart.js" />
+    <Content Include="Resources\vendor\charts\Chart.min.css" />
+    <Content Include="Resources\vendor\charts\Chart.min.js" />
+    <Content Include="Resources\vendor\charts\moment.min.js" />
+    <Content Include="Resources\vendor\charts\utils.js" />
+    <Content Include="Resources\vendor\fontawesome-free\css\all.css" />
+    <Content Include="Resources\vendor\fontawesome-free\css\all.min.css" />
+    <Content Include="Resources\vendor\fontawesome-free\css\brands.css" />
+    <Content Include="Resources\vendor\fontawesome-free\css\brands.min.css" />
+    <Content Include="Resources\vendor\fontawesome-free\css\duotone.css" />
+    <Content Include="Resources\vendor\fontawesome-free\css\duotone.min.css" />
+    <Content Include="Resources\vendor\fontawesome-free\css\fontawesome.css" />
+    <Content Include="Resources\vendor\fontawesome-free\css\fontawesome.min.css" />
+    <Content Include="Resources\vendor\fontawesome-free\css\light.css" />
+    <Content Include="Resources\vendor\fontawesome-free\css\light.min.css" />
+    <Content Include="Resources\vendor\fontawesome-free\css\regular.css" />
+    <Content Include="Resources\vendor\fontawesome-free\css\regular.min.css" />
+    <Content Include="Resources\vendor\fontawesome-free\css\solid.css" />
+    <Content Include="Resources\vendor\fontawesome-free\css\solid.min.css" />
+    <Content Include="Resources\vendor\fontawesome-free\css\svg-with-js.css" />
+    <Content Include="Resources\vendor\fontawesome-free\css\svg-with-js.min.css" />
+    <Content Include="Resources\vendor\fontawesome-free\css\v4-shims.css" />
+    <Content Include="Resources\vendor\fontawesome-free\css\v4-shims.min.css" />
+    <Content Include="Resources\vendor\jquery\jquery.min.js" />
+    <Content Include="Resources\vendor\OwlCarousel\css\owl.carousel.min.css" />
+    <Content Include="Resources\vendor\OwlCarousel\js\owl.carousel.min.js" />
+    <Content Include="Retailer\Challan_Update_FailurePayments.aspx" />
+    <Content Include="Retailer\RetailersIsActive_Report.aspx" />
+    <Content Include="Retailer\SFTTransDate.aspx" />
+    <Content Include="Retailer\ChangePassword.aspx" />
+    <Content Include="Retailer\CPEPayment_Report.aspx" />
+    <Content Include="Retailer\DepotSelection.aspx" />
+    <Content Include="Retailer\PaymentRetailarDtls_MD.aspx" />
+    <Content Include="Retailer\RetailerSPVerifiedChallans.aspx" />
+    <Content Include="Retailer\RSPPaymentView.aspx" />
+    <Content Include="Retailer\CPEPaymentView.aspx" />
+    <Content Include="Retailer\RetailerProfile_Confirm.aspx" />
+    <Content Include="Retailer\RetailerSpecialPayments.aspx" />
+    <Content Include="Retailer\SFT_BankName.aspx" />
+    <Content Include="Retailer\SFT_Challans.aspx" />
+    <Content Include="RSandDs.aspx" />
+    <Content Include="SalesGazette.aspx" />
+    <Content Include="Scripts\jquery-1.12.4.js" />
+    <Content Include="Scripts\jquery-1.7.2.min.js" />
+    <Content Include="Scripts\jquery-3.1.0.js" />
+    <Content Include="Scripts\jquery-3.1.0.min.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.min.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.0.min.map" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="obj\Debug\ExciseAPI.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\TempPE\App_Start.Ds_HOA.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\App_Start.Ds_MinorHead.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\App_Start.Ds_PaymentDtls.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\App_Start.Reg_Appli.Designer.cs.dll" />
+    <Content Include="Retailer\AvailableRetailers.aspx" />
+    <Content Include="Retailer\BankWiseReport.aspx" />
+    <Content Include="Retailer\ChallanUpdate.aspx" />
+    <Content Include="Retailer\DashboardRetailer.aspx" />
+    <Content Include="Retailer\Depot_Mapping.aspx" />
+    <Content Include="Retailer\Ledger_Report.aspx" />
+    <Content Include="Retailer\PaymentReceipt.aspx" />
+    <Content Include="Retailer\PaymentRetailarDtls.aspx" />
+    <Content Include="Retailer\PaymentView.aspx" />
+    <Content Include="Retailer\RetailerDashboard.aspx" />
+    <Content Include="Retailer\RetailerPaymentView.aspx" />
+    <Content Include="Retailer\RetailerWiseReport.aspx" />
+    <Content Include="Retailer\Retailer_Upload.aspx" />
+    <Content Include="Retailer\Retailer_Upload_Update.aspx" />
+    <Content Include="Retailer\Retailer_ViewPaymet.aspx" />
+    <Content Include="Retailer\RPaymentDtls.aspx" />
+    <Content Include="Retailer\RPaymentDtls_LateFee.aspx" />
+    <Content Include="Retailer\SalesProceedingViewPayment.aspx" />
+    <Content Include="Retailer\SftReport.aspx" />
+    <Content Include="Retailer\Sft_Ledger_Trans_Pending_Report.aspx" />
+    <Content Include="Scripts\bootbox.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\css\style.css" />
+    <Content Include="Scripts\img\about-img.jpg" />
+    <Content Include="Scripts\img\apple-touch-icon.png" />
+    <Content Include="Scripts\img\blog\blog-1.jpg" />
+    <Content Include="Scripts\img\blog\blog-2.jpg" />
+    <Content Include="Scripts\img\blog\blog-3.jpg" />
+    <Content Include="Scripts\img\blog\blog-4.jpg" />
+    <Content Include="Scripts\img\blog\blog-author.jpg" />
+    <Content Include="Scripts\img\blog\blog-inside-post.jpg" />
+    <Content Include="Scripts\img\blog\blog-recent-1.jpg" />
+    <Content Include="Scripts\img\blog\blog-recent-2.jpg" />
+    <Content Include="Scripts\img\blog\blog-recent-3.jpg" />
+    <Content Include="Scripts\img\blog\blog-recent-4.jpg" />
+    <Content Include="Scripts\img\blog\blog-recent-5.jpg" />
+    <Content Include="Scripts\img\blog\comments-1.jpg" />
+    <Content Include="Scripts\img\blog\comments-2.jpg" />
+    <Content Include="Scripts\img\blog\comments-3.jpg" />
+    <Content Include="Scripts\img\blog\comments-4.jpg" />
+    <Content Include="Scripts\img\blog\comments-5.jpg" />
+    <Content Include="Scripts\img\blog\comments-6.jpg" />
+    <Content Include="Scripts\img\clients\client-1.png" />
+    <Content Include="Scripts\img\clients\client-2.png" />
+    <Content Include="Scripts\img\clients\client-3.png" />
+    <Content Include="Scripts\img\clients\client-4.png" />
+    <Content Include="Scripts\img\clients\client-5.png" />
+    <Content Include="Scripts\img\clients\client-6.png" />
+    <Content Include="Scripts\img\clients\client-7.png" />
+    <Content Include="Scripts\img\clients\client-8.png" />
+    <Content Include="Scripts\img\favicon.png" />
+    <Content Include="Scripts\img\hero-bg.jpg" />
+    <Content Include="Scripts\img\portfolio\portfolio-1.jpg" />
+    <Content Include="Scripts\img\portfolio\portfolio-2.jpg" />
+    <Content Include="Scripts\img\portfolio\portfolio-3.jpg" />
+    <Content Include="Scripts\img\portfolio\portfolio-4.jpg" />
+    <Content Include="Scripts\img\portfolio\portfolio-5.jpg" />
+    <Content Include="Scripts\img\portfolio\portfolio-6.jpg" />
+    <Content Include="Scripts\img\portfolio\portfolio-7.jpg" />
+    <Content Include="Scripts\img\portfolio\portfolio-8.jpg" />
+    <Content Include="Scripts\img\portfolio\portfolio-9.jpg" />
+    <Content Include="Scripts\img\portfolio\portfolio-details-1.jpg" />
+    <Content Include="Scripts\img\portfolio\portfolio-details-2.jpg" />
+    <Content Include="Scripts\img\portfolio\portfolio-details-3.jpg" />
+    <Content Include="Scripts\img\team\team-1.jpg" />
+    <Content Include="Scripts\img\team\team-2.jpg" />
+    <Content Include="Scripts\img\team\team-3.jpg" />
+    <Content Include="Scripts\img\team\team-4.jpg" />
+    <Content Include="Scripts\img\testimonials-bg.jpg" />
+    <Content Include="Scripts\img\testimonials\testimonials-1.jpg" />
+    <Content Include="Scripts\img\testimonials\testimonials-2.jpg" />
+    <Content Include="Scripts\img\testimonials\testimonials-3.jpg" />
+    <Content Include="Scripts\img\testimonials\testimonials-4.jpg" />
+    <Content Include="Scripts\img\testimonials\testimonials-5.jpg" />
+    <Content Include="Scripts\img\values-1.jpg" />
+    <Content Include="Scripts\img\values-2.jpg" />
+    <Content Include="Scripts\img\values-3.jpg" />
+    <Content Include="Scripts\img\values-4.jpg" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.19.custom.min.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.backstretch.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.webcam.js" />
+    <Content Include="Scripts\jscam.swf" />
+    <Content Include="Scripts\jscam_canvas_only.swf" />
+    <Content Include="Scripts\js\main.js" />
+    <Content Include="Scripts\js\Main1.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\scss\Readme.txt" />
+    <Content Include="Scripts\shaa256.js" />
+    <Content Include="Scripts\vendor\aos\aos.css" />
+    <Content Include="Scripts\vendor\aos\aos.js" />
+    <Content Include="Scripts\vendor\bootstrap-icons\bootstrap-icons.css" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap-grid.rtl.css" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap-reboot.rtl.css" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap-utilities.css" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap-utilities.min.css" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap-utilities.rtl.css" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap.rtl.css" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap.rtl.min.css" />
+    <Content Include="Scripts\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Scripts\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\vendor\bootstrap\js\bootstrap.esm.js" />
+    <Content Include="Scripts\vendor\bootstrap\js\bootstrap.esm.min.js" />
+    <Content Include="Scripts\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Scripts\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Scripts\vendor\boxicons\css\animations.css" />
+    <Content Include="Scripts\vendor\boxicons\css\boxicons.css" />
+    <Content Include="Scripts\vendor\boxicons\css\boxicons.min.css" />
+    <Content Include="Scripts\vendor\boxicons\css\transformations.css" />
+    <Content Include="Scripts\vendor\boxicons\fonts\boxicons.svg" />
+    <Content Include="Scripts\vendor\glightbox\css\glightbox.css" />
+    <Content Include="Scripts\vendor\glightbox\css\glightbox.min.css" />
+    <Content Include="Scripts\vendor\glightbox\css\plyr.css" />
+    <Content Include="Scripts\vendor\glightbox\css\plyr.min.css" />
+    <Content Include="Scripts\vendor\glightbox\js\glightbox.js" />
+    <Content Include="Scripts\vendor\glightbox\js\glightbox.min.js" />
+    <Content Include="Scripts\vendor\isotope-layout\isotope.pkgd.js" />
+    <Content Include="Scripts\vendor\isotope-layout\isotope.pkgd.min.js" />
+    <Content Include="Scripts\vendor\php-email-form\validate.js" />
+    <Content Include="Scripts\vendor\swiper\swiper-bundle.min.css" />
+    <Content Include="Scripts\vendor\swiper\swiper-bundle.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Secondary_Distillery.aspx" />
+    <Content Include="Service_Chart.aspx" />
+    <Content Include="SHO\ChangePassword.aspx" />
+    <Content Include="SHO\EventPermission.aspx" />
+    <Content Include="SHO\EventUpdate_SHO.aspx" />
+    <Content Include="SHO\Event_MandalTransfer.aspx" />
+    <Content Include="SHO\SHO.aspx" />
+    <Content Include="SHO\SHO_EventReport.aspx" />
+    <Content Include="SupGazette.aspx" />
+    <Content Include="Supplier\Dtls_Retailers.aspx" />
+    <Content Include="Supplier\EventPermitHome.aspx" />
+    <Content Include="Supplier\HOA.aspx" />
+    <Content Include="Supplier\MST_Retailers.aspx" />
+    <Content Include="Supplier\PaymentGDtls.aspx" />
+    <Content Include="Supplier\Reset_Password.aspx" />
+    <Content Include="Supplier\Supplier.aspx" />
+    <Content Include="Supplier\SupplierChallanUpdate.aspx" />
+    <Content Include="Supplier\SupplierPaymentDtls.aspx" />
+    <Content Include="Supplier\SupplierPaymentView.aspx" />
+    <Content Include="Supplier\Supplier_AvailableReport.aspx" />
+    <Content Include="Supplier\Supplier_Report.aspx" />
+    <Content Include="Supplier\Type_DutiesFee.aspx" />
+    <Content Include="Supplier\User_Creation.aspx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Bundle.config" />
+    <Content Include="Site.Mobile.Master" />
+    <Content Include="Views\web.config" />
+    <Content Include="Site1.Master" />
+    <Content Include="Site.Master" />
+    <Content Include="Supplier\Supplier_Master.Master" />
+    <Content Include="Site.Mobile_ORG.Master" />
+    <Content Include="Site_M.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AbstractRpt.aspx.cs">
+      <DependentUpon>AbstractRpt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AbstractRpt.aspx.designer.cs">
+      <DependentUpon>AbstractRpt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminChallanUpdate.aspx.cs">
+      <DependentUpon>AdminChallanUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminChallanUpdate.aspx.designer.cs">
+      <DependentUpon>AdminChallanUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DownloadPaymentDetails.aspx.cs">
+      <DependentUpon>DownloadPaymentDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DownloadPaymentDetails.aspx.designer.cs">
+      <DependentUpon>DownloadPaymentDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EventPermitDashboard.aspx.cs">
+      <DependentUpon>EventPermitDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EventPermitDashboard.aspx.designer.cs">
+      <DependentUpon>EventPermitDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Genrate_TextPayment.aspx.cs">
+      <DependentUpon>Genrate_TextPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Genrate_TextPayment.aspx.designer.cs">
+      <DependentUpon>Genrate_TextPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\HOA.aspx.cs">
+      <DependentUpon>HOA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\HOA.aspx.designer.cs">
+      <DependentUpon>HOA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\InstallementMaster.aspx.cs">
+      <DependentUpon>InstallementMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\InstallementMaster.aspx.designer.cs">
+      <DependentUpon>InstallementMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Manufacture.aspx.cs">
+      <DependentUpon>Manufacture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Manufacture.aspx.designer.cs">
+      <DependentUpon>Manufacture.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Mst_ManufMinorH.aspx.cs">
+      <DependentUpon>Mst_ManufMinorH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Mst_ManufMinorH.aspx.designer.cs">
+      <DependentUpon>Mst_ManufMinorH.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Mst_ManufSH.aspx.cs">
+      <DependentUpon>Mst_ManufSH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Mst_ManufSH.aspx.designer.cs">
+      <DependentUpon>Mst_ManufSH.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Mst_TypeOfManufacturing.aspx.cs">
+      <DependentUpon>Mst_TypeOfManufacturing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Mst_TypeOfManufacturing.aspx.designer.cs">
+      <DependentUpon>Mst_TypeOfManufacturing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Rpt_User_Creation.aspx.cs">
+      <DependentUpon>Rpt_User_Creation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Rpt_User_Creation.aspx.designer.cs">
+      <DependentUpon>Rpt_User_Creation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Supplier.aspx.cs">
+      <DependentUpon>Supplier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Supplier.aspx.designer.cs">
+      <DependentUpon>Supplier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Treasury_Service.aspx.cs">
+      <DependentUpon>Treasury_Service.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Treasury_Service.aspx.designer.cs">
+      <DependentUpon>Treasury_Service.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TSBCLDashboard.aspx.cs">
+      <DependentUpon>TSBCLDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TSBCLDashboard.aspx.designer.cs">
+      <DependentUpon>TSBCLDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TypeDuties.aspx.cs">
+      <DependentUpon>TypeDuties.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TypeDuties.aspx.designer.cs">
+      <DependentUpon>TypeDuties.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TypeOfPayment.aspx.cs">
+      <DependentUpon>TypeOfPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TypeOfPayment.aspx.designer.cs">
+      <DependentUpon>TypeOfPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Type_DutiesFee.aspx.cs">
+      <DependentUpon>Type_DutiesFee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Type_DutiesFee.aspx.designer.cs">
+      <DependentUpon>Type_DutiesFee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\User_Creation.aspx.cs">
+      <DependentUpon>User_Creation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\User_Creation.aspx.designer.cs">
+      <DependentUpon>User_Creation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicantRegistration.aspx.cs">
+      <DependentUpon>ApplicantRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApplicantRegistration.aspx.designer.cs">
+      <DependentUpon>ApplicantRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assets\cpImg\cpImage.aspx.cs">
+      <DependentUpon>cpImage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Assets\cpImg\cpImage.aspx.designer.cs">
+      <DependentUpon>cpImage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DPEO_Admin\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DPEO_Admin\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DPEO_Admin\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DPEO_Admin\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DPEO_Admin\DistrictRpt.aspx.cs">
+      <DependentUpon>DistrictRpt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DPEO_Admin\DistrictRpt.aspx.designer.cs">
+      <DependentUpon>DistrictRpt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DPEO_Admin\DistrictWiseAbstract.aspx.cs">
+      <DependentUpon>DistrictWiseAbstract.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DPEO_Admin\DistrictWiseAbstract.aspx.designer.cs">
+      <DependentUpon>DistrictWiseAbstract.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DPEO_Admin\DPEORestPassword.aspx.cs">
+      <DependentUpon>DPEORestPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DPEO_Admin\DPEORestPassword.aspx.designer.cs">
+      <DependentUpon>DPEORestPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DPEO_Admin\EventPermitSearch.aspx.cs">
+      <DependentUpon>EventPermitSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DPEO_Admin\EventPermitSearch.aspx.designer.cs">
+      <DependentUpon>EventPermitSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DPEO_Admin\ExciseDistrictRpt.aspx.cs">
+      <DependentUpon>ExciseDistrictRpt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DPEO_Admin\ExciseDistrictRpt.aspx.designer.cs">
+      <DependentUpon>ExciseDistrictRpt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DPEO_Admin\ExciseDPEORpt.aspx.cs">
+      <DependentUpon>ExciseDPEORpt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DPEO_Admin\ExciseDPEORpt.aspx.designer.cs">
+      <DependentUpon>ExciseDPEORpt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DPEO_Admin\ExciseSHORpt.aspx.cs">
+      <DependentUpon>ExciseSHORpt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DPEO_Admin\ExciseSHORpt.aspx.designer.cs">
+      <DependentUpon>ExciseSHORpt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DPEO_Admin\ExciseStationRpt.aspx.cs">
+      <DependentUpon>ExciseStationRpt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DPEO_Admin\ExciseStationRpt.aspx.designer.cs">
+      <DependentUpon>ExciseStationRpt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DPEO_Admin\FeeDetails.aspx.cs">
+      <DependentUpon>FeeDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DPEO_Admin\FeeDetails.aspx.designer.cs">
+      <DependentUpon>FeeDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DPEO_Admin\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DPEO_Admin\Menu.ascx.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EOB.Master.cs">
+      <DependentUpon>EOB.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EOB.Master.designer.cs">
+      <DependentUpon>EOB.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\Sample.aspx.cs">
+      <DependentUpon>Sample.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\Sample.aspx.designer.cs">
+      <DependentUpon>Sample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home_org.aspx.cs">
+      <DependentUpon>Home_org.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home_org.aspx.designer.cs">
+      <DependentUpon>Home_org.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login1.aspx.cs">
+      <DependentUpon>Login1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login1.aspx.designer.cs">
+      <DependentUpon>Login1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginMaster.Master.cs">
+      <DependentUpon>LoginMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginMaster.Master.designer.cs">
+      <DependentUpon>LoginMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\Pending_Challan_Update.aspx.cs">
+      <DependentUpon>Pending_Challan_Update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\Pending_Challan_Update.aspx.designer.cs">
+      <DependentUpon>Pending_Challan_Update.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\RetailersInstallmentReport.aspx.cs">
+      <DependentUpon>RetailersInstallmentReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\RetailersInstallmentReport.aspx.designer.cs">
+      <DependentUpon>RetailersInstallmentReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\Signature.aspx.cs">
+      <DependentUpon>Signature.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\Signature.aspx.designer.cs">
+      <DependentUpon>Signature.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\SupplierDataHandler.cs" />
+    <Compile Include="NICAdmin\Supplier_Payments_StateWise.aspx.cs">
+      <DependentUpon>Supplier_Payments_StateWise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\Supplier_Payments_StateWise.aspx.designer.cs">
+      <DependentUpon>Supplier_Payments_StateWise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Renewals\BarEndorsement.aspx.cs">
+      <DependentUpon>BAREndorsement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Renewals\BAREndorsement.aspx.designer.cs">
+      <DependentUpon>BAREndorsement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Renewals\BARRenewal.aspx.cs">
+      <DependentUpon>BARRenewal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Renewals\BARRenewal.aspx.designer.cs">
+      <DependentUpon>BARRenewal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Renewals\BARRenewalProceedings.aspx.cs">
+      <DependentUpon>BARRenewalProceedings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Renewals\BARRenewalProceedings.aspx.designer.cs">
+      <DependentUpon>BARRenewalProceedings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Renewals\DepartmentActionGrid.aspx.cs">
+      <DependentUpon>DepartmentActionGrid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Renewals\DepartmentActionGrid.aspx.designer.cs">
+      <DependentUpon>DepartmentActionGrid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Renewals\DepartmentApplications.aspx.cs">
+      <DependentUpon>DepartmentApplications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Renewals\DepartmentApplications.aspx.designer.cs">
+      <DependentUpon>DepartmentApplications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Renewals\FWDRenewalApplications.aspx.cs">
+      <DependentUpon>FWDRenewalApplications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Renewals\FWDRenewalApplications.aspx.designer.cs">
+      <DependentUpon>FWDRenewalApplications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Renewals\FWDRenewalApplicationsGrid.aspx.cs">
+      <DependentUpon>FWDRenewalApplicationsGrid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Renewals\FWDRenewalApplicationsGrid.aspx.designer.cs">
+      <DependentUpon>FWDRenewalApplicationsGrid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Renewals\MBEndorsement.aspx.cs">
+      <DependentUpon>MBEndorsement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Renewals\MBEndorsement.aspx.designer.cs">
+      <DependentUpon>MBEndorsement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Renewals\MBRenewal.aspx.cs">
+      <DependentUpon>MBRenewal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Renewals\MBRenewal.aspx.designer.cs">
+      <DependentUpon>MBRenewal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Renewals\ViewBARRenewal.aspx.cs">
+      <DependentUpon>ViewBARRenewal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Renewals\ViewBARRenewal.aspx.designer.cs">
+      <DependentUpon>ViewBARRenewal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Renewals\ViewMBRenewal.aspx.cs">
+      <DependentUpon>ViewMBRenewal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Renewals\ViewMBRenewal.aspx.designer.cs">
+      <DependentUpon>ViewMBRenewal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Renewals\ViewMBRenewalApplications.aspx.cs">
+      <DependentUpon>ViewMBRenewalApplications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Renewals\ViewMBRenewalApplications.aspx.designer.cs">
+      <DependentUpon>ViewMBRenewalApplications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Renewals\ViewRenewalApplications.aspx.cs">
+      <DependentUpon>ViewRenewalApplications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Renewals\ViewRenewalApplications.aspx.designer.cs">
+      <DependentUpon>ViewRenewalApplications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\ChangePassword_M.aspx.cs">
+      <DependentUpon>ChangePassword_M.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\ChangePassword_M.aspx.designer.cs">
+      <DependentUpon>ChangePassword_M.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SHO\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SHO\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Signature.aspx.cs">
+      <DependentUpon>Signature.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Signature.aspx.designer.cs">
+      <DependentUpon>Signature.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile_ORG.Master.cs">
+      <DependentUpon>Site.Mobile_ORG.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile_ORG.Master.designer.cs">
+      <DependentUpon>Site.Mobile_ORG.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site_M.Master.cs">
+      <DependentUpon>Site_M.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site_M.Master.designer.cs">
+      <DependentUpon>Site_M.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\Supplier_Master.Master.cs">
+      <DependentUpon>Supplier_Master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier\Supplier_Master.Master.designer.cs">
+      <DependentUpon>Supplier_Master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormsss.aspx.cs">
+      <DependentUpon>WebFormsss.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormsss.aspx.designer.cs">
+      <DependentUpon>WebFormsss.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Winery.aspx.cs">
+      <DependentUpon>Winery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Winery.aspx.designer.cs">
+      <DependentUpon>Winery.aspx</DependentUpon>
+    </Compile>
+    <Content Include="App_Code\AppSettings.cs" />
+    <Compile Include="App_Start\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\CacheData.cs" />
+    <Compile Include="App_Start\Captcha.cs" />
+    <Compile Include="App_Start\CommonFuncs.cs" />
+    <Compile Include="App_Start\DeleteCookie.cs" />
+    <Compile Include="App_Start\Ds_HOA.Designer.cs">
+      <DependentUpon>Ds_HOA.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="App_Start\Ds_MinorHead.Designer.cs">
+      <DependentUpon>Ds_MinorHead.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="App_Start\Ds_PaymentDtls.Designer.cs">
+      <DependentUpon>Ds_PaymentDtls.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="App_Start\ExceptionLogging.cs" />
+    <Compile Include="App_Start\IdentityModels.cs" />
+    <Compile Include="App_Start\MimeType.cs" />
+    <Compile Include="App_Start\PrevBrowCache.cs" />
+    <Compile Include="App_Start\Reg_Appli.Designer.cs">
+      <DependentUpon>Reg_Appli.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\SampleSqlInjectionScreeningModule.cs" />
+    <Compile Include="App_Start\SessionData.cs" />
+    <Compile Include="App_Start\shared.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="App_Start\Validate.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Brewery.aspx.cs">
+      <DependentUpon>Brewery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Brewery.aspx.designer.cs">
+      <DependentUpon>Brewery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePasswordS.aspx.cs">
+      <DependentUpon>ChangePasswordS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePasswordS.aspx.designer.cs">
+      <DependentUpon>ChangePasswordS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Circulars.aspx.cs">
+      <DependentUpon>Circulars.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Circulars.aspx.designer.cs">
+      <DependentUpon>Circulars.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\EventController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
+    <Compile Include="DashboardInfo.aspx.cs">
+      <DependentUpon>DashboardInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DashboardInfo.aspx.designer.cs">
+      <DependentUpon>DashboardInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Depot\DepotWise_RetailerReport.aspx.cs">
+      <DependentUpon>DepotWise_RetailerReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Depot\DepotWise_RetailerReport.aspx.designer.cs">
+      <DependentUpon>DepotWise_RetailerReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Depot\DEPOTDashboard.aspx.cs">
+      <DependentUpon>DEPOTDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Depot\DEPOTDashboard.aspx.designer.cs">
+      <DependentUpon>DEPOTDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Depot\Ledger_Upload.aspx.cs">
+      <DependentUpon>Ledger_Upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Depot\Ledger_Upload.aspx.designer.cs">
+      <DependentUpon>Ledger_Upload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Depot\SalesProceedPendingPaymentReport.aspx.cs">
+      <DependentUpon>SalesProceedPendingPaymentReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Depot\SalesProceedPendingPaymentReport.aspx.designer.cs">
+      <DependentUpon>SalesProceedPendingPaymentReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Depot\Sales_ProceedByDepot.aspx.cs">
+      <DependentUpon>Sales_ProceedByDepot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Depot\Sales_ProceedByDepot.aspx.designer.cs">
+      <DependentUpon>Sales_ProceedByDepot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DistGazette.aspx.cs">
+      <DependentUpon>DistGazette.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DistGazette.aspx.designer.cs">
+      <DependentUpon>DistGazette.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Depot\SalesProceedReport.aspx.cs">
+      <DependentUpon>SalesProceedReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Depot\SalesProceedReport.aspx.designer.cs">
+      <DependentUpon>SalesProceedReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DPEO\DepeoEventPermission.aspx.cs">
+      <DependentUpon>DepeoEventPermission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DPEO\DepeoEventPermission.aspx.designer.cs">
+      <DependentUpon>DepeoEventPermission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DPEO\DPEOEvent_Report.aspx.cs">
+      <DependentUpon>DPEOEvent_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DPEO\DPEOEvent_Report.aspx.designer.cs">
+      <DependentUpon>DPEOEvent_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DPEO\DPEORSPEntry.aspx.cs">
+      <DependentUpon>DPEORSPEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DPEO\DPEORSPEntry.aspx.designer.cs">
+      <DependentUpon>DPEORSPEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DPEO\DPEODashboard.aspx.cs">
+      <DependentUpon>DPEODashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DPEO\DPEODashboard.aspx.designer.cs">
+      <DependentUpon>DPEODashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ECMS\ComplaintStatusReport.aspx.cs">
+      <DependentUpon>ComplaintStatusReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ECMS\ComplaintStatusReport.aspx.designer.cs">
+      <DependentUpon>ComplaintStatusReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ECMS\ControlRoomForm.aspx.cs">
+      <DependentUpon>ControlRoomForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ECMS\ControlRoomForm.aspx.designer.cs">
+      <DependentUpon>ControlRoomForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ECMS\DC_Form.aspx.cs">
+      <DependentUpon>DC_Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ECMS\DC_Form.aspx.designer.cs">
+      <DependentUpon>DC_Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ECMS\EnquiryForm.aspx.cs">
+      <DependentUpon>EnquiryForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ECMS\EnquiryForm.aspx.designer.cs">
+      <DependentUpon>EnquiryForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ECMS\Public_Complaint_Form.aspx.cs">
+      <DependentUpon>Public_Complaint_Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ECMS\Public_Complaint_Form.aspx.designer.cs">
+      <DependentUpon>Public_Complaint_Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ECMS\ViewComplaints_ControlRoom.aspx.cs">
+      <DependentUpon>ViewComplaints_ControlRoom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ECMS\ViewComplaints_ControlRoom.aspx.designer.cs">
+      <DependentUpon>ViewComplaints_ControlRoom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\A3A.aspx.cs">
+      <DependentUpon>A3A.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\A3A.aspx.designer.cs">
+      <DependentUpon>A3A.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\AdminReport.aspx.cs">
+      <DependentUpon>AdminReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\AdminReport.aspx.designer.cs">
+      <DependentUpon>AdminReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\ApplicationsReport.aspx.cs">
+      <DependentUpon>ApplicationsReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\ApplicationsReport.aspx.designer.cs">
+      <DependentUpon>ApplicationsReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\ARSIII.aspx.cs">
+      <DependentUpon>ARSIII.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\ARSIII.aspx.designer.cs">
+      <DependentUpon>ARSIII.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\B1.aspx.cs">
+      <DependentUpon>B1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\B1.aspx.designer.cs">
+      <DependentUpon>B1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\Bar1A.aspx.cs">
+      <DependentUpon>Bar1A.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\Bar1A.aspx.designer.cs">
+      <DependentUpon>Bar1A.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\BSectionForms.aspx.cs">
+      <DependentUpon>BSectionForms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\BSectionForms.aspx.designer.cs">
+      <DependentUpon>BSectionForms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\CSection.aspx.cs">
+      <DependentUpon>CSection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\CSection.aspx.designer.cs">
+      <DependentUpon>CSection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\D1P%28GSection%29.aspx.cs">
+      <DependentUpon>D1P%28GSection%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\D1P%28GSection%29.aspx.designer.cs">
+      <DependentUpon>D1P%28GSection%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\D1R%28GSection%29.aspx.cs">
+      <DependentUpon>D1R%28GSection%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\D1R%28GSection%29.aspx.designer.cs">
+      <DependentUpon>D1R%28GSection%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\D1_P.aspx.cs">
+      <DependentUpon>D1_P.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\D1_P.aspx.designer.cs">
+      <DependentUpon>D1_P.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\D1_R.aspx.cs">
+      <DependentUpon>D1_R.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\D1_R.aspx.designer.cs">
+      <DependentUpon>D1_R.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\DM1.aspx.cs">
+      <DependentUpon>DM1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\DM1.aspx.designer.cs">
+      <DependentUpon>DM1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\DSXVII.aspx.cs">
+      <DependentUpon>DSXVII.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\DSXVII.aspx.designer.cs">
+      <DependentUpon>DSXVII.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\DS_XI_Application.aspx.cs">
+      <DependentUpon>DS_XI_Application.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\DS_XI_Application.aspx.designer.cs">
+      <DependentUpon>DS_XI_Application.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\GSection.aspx.cs">
+      <DependentUpon>GSection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\GSection.aspx.designer.cs">
+      <DependentUpon>GSection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\IHA1.aspx.cs">
+      <DependentUpon>IHA1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\IHA1.aspx.designer.cs">
+      <DependentUpon>IHA1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\IHA2.aspx.cs">
+      <DependentUpon>IHA2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\IHA2.aspx.designer.cs">
+      <DependentUpon>IHA2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\M1.aspx.cs">
+      <DependentUpon>M1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\M1.aspx.designer.cs">
+      <DependentUpon>M1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\M1_Preview.aspx.cs">
+      <DependentUpon>M1_Preview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\M1_Preview.aspx.designer.cs">
+      <DependentUpon>M1_Preview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\M2.aspx.cs">
+      <DependentUpon>M2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\M2.aspx.designer.cs">
+      <DependentUpon>M2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\M4.aspx.cs">
+      <DependentUpon>M4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\M4.aspx.designer.cs">
+      <DependentUpon>M4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\M5.aspx.cs">
+      <DependentUpon>M5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\M5.aspx.designer.cs">
+      <DependentUpon>M5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\MicroBrewery_MB1.aspx.cs">
+      <DependentUpon>MicroBrewery_MB1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\MicroBrewery_MB1.aspx.designer.cs">
+      <DependentUpon>MicroBrewery_MB1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\Molasses_M4.aspx.cs">
+      <DependentUpon>Molasses_M4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\Molasses_M4.aspx.designer.cs">
+      <DependentUpon>Molasses_M4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\RS_III.aspx.cs">
+      <DependentUpon>RS_III.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\RS_III.aspx.designer.cs">
+      <DependentUpon>RS_III.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\RS_II_ApplicationForm.aspx.cs">
+      <DependentUpon>RS_II_ApplicationForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\RS_II_ApplicationForm.aspx.designer.cs">
+      <DependentUpon>RS_II_ApplicationForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\Type_Manufacturer.aspx.cs">
+      <DependentUpon>Type_Manufacturer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\Type_Manufacturer.aspx.designer.cs">
+      <DependentUpon>Type_Manufacturer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\Type_Of_Retailers.aspx.cs">
+      <DependentUpon>Type_Of_Retailers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\Type_Of_Retailers.aspx.designer.cs">
+      <DependentUpon>Type_Of_Retailers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\View_M1Details.aspx.cs">
+      <DependentUpon>View_M1Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\View_M1Details.aspx.designer.cs">
+      <DependentUpon>View_M1Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\W1.aspx.cs">
+      <DependentUpon>W1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\W1.aspx.designer.cs">
+      <DependentUpon>W1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EODB\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EODB\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\ACKEventReg.aspx.cs">
+      <DependentUpon>ACKEventReg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\ACKEventReg.aspx.designer.cs">
+      <DependentUpon>ACKEventReg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\Ack_EventReg.aspx.cs">
+      <DependentUpon>Ack_EventReg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\Ack_EventReg.aspx.designer.cs">
+      <DependentUpon>Ack_EventReg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\AdditionalPayment.aspx.cs">
+      <DependentUpon>AdditionalPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\AdditionalPayment.aspx.designer.cs">
+      <DependentUpon>AdditionalPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\ApplicationPayment_Update.aspx.cs">
+      <DependentUpon>ApplicationPayment_Update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\ApplicationPayment_Update.aspx.designer.cs">
+      <DependentUpon>ApplicationPayment_Update.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\ApplicationStatus.aspx.cs">
+      <DependentUpon>ApplicationStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\ApplicationStatus.aspx.designer.cs">
+      <DependentUpon>ApplicationStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\DiffPaymentDtls.aspx.cs">
+      <DependentUpon>DiffPaymentDtls.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\DiffPaymentDtls.aspx.designer.cs">
+      <DependentUpon>DiffPaymentDtls.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\DistrictWisePermitDetails.aspx.cs">
+      <DependentUpon>DistrictWisePermitDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\DistrictWisePermitDetails.aspx.designer.cs">
+      <DependentUpon>DistrictWisePermitDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\DownloadPermission.aspx.cs">
+      <DependentUpon>DownloadPermission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\DownloadPermission.aspx.designer.cs">
+      <DependentUpon>DownloadPermission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\EditEventRegistration.aspx.cs">
+      <DependentUpon>EditEventRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\EditEventRegistration.aspx.designer.cs">
+      <DependentUpon>EditEventRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\EoDBDashboard.aspx.cs">
+      <DependentUpon>EoDBDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\EoDBDashboard.aspx.designer.cs">
+      <DependentUpon>EoDBDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\Event.Master.cs">
+      <DependentUpon>Event.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\Event.Master.designer.cs">
+      <DependentUpon>Event.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Event\EventPermit_Issued_Rejected_Report.aspx.cs">
+      <DependentUpon>EventPermit_Issued_Rejected_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\EventPermit_Issued_Rejected_Report.aspx.designer.cs">
+      <DependentUpon>EventPermit_Issued_Rejected_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\EventRegistration.aspx.cs">
+      <DependentUpon>EventRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\EventRegistration.aspx.designer.cs">
+      <DependentUpon>EventRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\Events.Master.cs">
+      <DependentUpon>Events.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\Events.Master.designer.cs">
+      <DependentUpon>Events.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Event\EventSelection.aspx.cs">
+      <DependentUpon>EventSelection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\EventSelection.aspx.designer.cs">
+      <DependentUpon>EventSelection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\EventStatus.aspx.cs">
+      <DependentUpon>EventStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\EventStatus.aspx.designer.cs">
+      <DependentUpon>EventStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\EventStatus_org.aspx.cs">
+      <DependentUpon>EventStatus_org.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\EventStatus_org.aspx.designer.cs">
+      <DependentUpon>EventStatus_org.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\Event_Update.aspx.cs">
+      <DependentUpon>Event_Update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\Event_Update.aspx.designer.cs">
+      <DependentUpon>Event_Update.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\Financial_Year_Event_PermitsReport.aspx.cs">
+      <DependentUpon>Financial_Year_Event_PermitsReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\Financial_Year_Event_PermitsReport.aspx.designer.cs">
+      <DependentUpon>Financial_Year_Event_PermitsReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\PaymentDtls.aspx.cs">
+      <DependentUpon>PaymentDtls.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\PaymentDtls.aspx.designer.cs">
+      <DependentUpon>PaymentDtls.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\PaymentView.aspx.cs">
+      <DependentUpon>PaymentView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\PaymentView.aspx.designer.cs">
+      <DependentUpon>PaymentView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\UploadDoc.aspx.cs">
+      <DependentUpon>UploadDoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\UploadDoc.aspx.designer.cs">
+      <DependentUpon>UploadDoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\Verify_permit.aspx.cs">
+      <DependentUpon>Verify_permit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\Verify_permit.aspx.designer.cs">
+      <DependentUpon>Verify_permit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\Verify_Scan.aspx.cs">
+      <DependentUpon>Verify_Scan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\Verify_Scan.aspx.designer.cs">
+      <DependentUpon>Verify_Scan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\EventUpdate_New.aspx.cs">
+      <DependentUpon>EventUpdate_New.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\EventUpdate_New.aspx.designer.cs">
+      <DependentUpon>EventUpdate_New.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F_Section.aspx.cs">
+      <DependentUpon>F_Section.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F_Section.aspx.designer.cs">
+      <DependentUpon>F_Section.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GoList.aspx.cs">
+      <DependentUpon>GoList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GoList.aspx.designer.cs">
+      <DependentUpon>GoList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.Master.cs">
+      <DependentUpon>Home.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.Master.designer.cs">
+      <DependentUpon>Home.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InformationWizard.aspx.cs">
+      <DependentUpon>InformationWizard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InformationWizard.aspx.designer.cs">
+      <DependentUpon>InformationWizard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginMaster1.Master.cs">
+      <DependentUpon>LoginMaster1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginMaster1.Master.designer.cs">
+      <DependentUpon>LoginMaster1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MicroBrewery.aspx.cs">
+      <DependentUpon>MicroBrewery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MicroBrewery.aspx.designer.cs">
+      <DependentUpon>MicroBrewery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EventModel.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\Responses.cs" />
+    <Compile Include="Molasses.aspx.cs">
+      <DependentUpon>Molasses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Molasses.aspx.designer.cs">
+      <DependentUpon>Molasses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\AbstractRpt.aspx.cs">
+      <DependentUpon>AbstractRpt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\AbstractRpt.aspx.designer.cs">
+      <DependentUpon>AbstractRpt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\AdminDashboard.aspx.cs">
+      <DependentUpon>AdminDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\AdminDashboard.aspx.designer.cs">
+      <DependentUpon>AdminDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\Challan_Transactiondetails.aspx.cs">
+      <DependentUpon>Challan_Transactiondetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\Challan_Transactiondetails.aspx.designer.cs">
+      <DependentUpon>Challan_Transactiondetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\CPEPayments_DueDatesReport.aspx.cs">
+      <DependentUpon>CPEPayments_DueDatesReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\CPEPayments_DueDatesReport.aspx.designer.cs">
+      <DependentUpon>CPEPayments_DueDatesReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\Create_Retailer.aspx.cs">
+      <DependentUpon>Create_Retailer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\Create_Retailer.aspx.designer.cs">
+      <DependentUpon>Create_Retailer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\Dashboard_ERCS.aspx.cs">
+      <DependentUpon>Dashboard_ERCS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\Dashboard_ERCS.aspx.designer.cs">
+      <DependentUpon>Dashboard_ERCS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\Dashboard_ERCS_I.aspx.cs">
+      <DependentUpon>Dashboard_ERCS_I.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\Dashboard_ERCS_I.aspx.designer.cs">
+      <DependentUpon>Dashboard_ERCS_I.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\Dashboard_Event.aspx.cs">
+      <DependentUpon>Dashboard_Event.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\Dashboard_Event.aspx.designer.cs">
+      <DependentUpon>Dashboard_Event.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\DistrictExStationMapping.aspx.cs">
+      <DependentUpon>DistrictExStationMapping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\DistrictExStationMapping.aspx.designer.cs">
+      <DependentUpon>DistrictExStationMapping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\DistrictRpt.aspx.cs">
+      <DependentUpon>DistrictRpt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\DistrictRpt.aspx.designer.cs">
+      <DependentUpon>DistrictRpt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\DistrictWiseAbstract.aspx.cs">
+      <DependentUpon>DistrictWiseAbstract.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\DistrictWiseAbstract.aspx.designer.cs">
+      <DependentUpon>DistrictWiseAbstract.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\DPEOJurisdictionFee.aspx.cs">
+      <DependentUpon>DPEOJurisdictionFee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\DPEOJurisdictionFee.aspx.designer.cs">
+      <DependentUpon>DPEOJurisdictionFee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\DPEORestPassword.aspx.cs">
+      <DependentUpon>DPEORestPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\DPEORestPassword.aspx.designer.cs">
+      <DependentUpon>DPEORestPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\EventPermitPaymentUpdateE.aspx.cs">
+      <DependentUpon>EventPermitPaymentUpdateE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\EventPermitPaymentUpdateE.aspx.designer.cs">
+      <DependentUpon>EventPermitPaymentUpdateE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\EventPermitReport.aspx.cs">
+      <DependentUpon>EventPermitReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\EventPermitReport.aspx.designer.cs">
+      <DependentUpon>EventPermitReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\EventPermitSearch.aspx.cs">
+      <DependentUpon>EventPermitSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\EventPermitSearch.aspx.designer.cs">
+      <DependentUpon>EventPermitSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\EventPermitWithPayment.aspx.cs">
+      <DependentUpon>EventPermitWithPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\EventPermitWithPayment.aspx.designer.cs">
+      <DependentUpon>EventPermitWithPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\EventUpdate.aspx.cs">
+      <DependentUpon>EventUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\EventUpdate.aspx.designer.cs">
+      <DependentUpon>EventUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\Event_Permits.aspx.cs">
+      <DependentUpon>Event_Permits.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\Event_Permits.aspx.designer.cs">
+      <DependentUpon>Event_Permits.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\ExciseDistrictRpt.aspx.cs">
+      <DependentUpon>ExciseDistrictRpt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\ExciseDistrictRpt.aspx.designer.cs">
+      <DependentUpon>ExciseDistrictRpt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\ExciseDPEORpt.aspx.cs">
+      <DependentUpon>ExciseDPEORpt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\ExciseDPEORpt.aspx.designer.cs">
+      <DependentUpon>ExciseDPEORpt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\ExciseSHORpt.aspx.cs">
+      <DependentUpon>ExciseSHORpt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\ExciseSHORpt.aspx.designer.cs">
+      <DependentUpon>ExciseSHORpt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\ExciseStationRpt.aspx.cs">
+      <DependentUpon>ExciseStationRpt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\ExciseStationRpt.aspx.designer.cs">
+      <DependentUpon>ExciseStationRpt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\ExciseStationWiseAbstract.aspx.cs">
+      <DependentUpon>ExciseStationWiseAbstract.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\ExciseStationWiseAbstract.aspx.designer.cs">
+      <DependentUpon>ExciseStationWiseAbstract.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\ExJuridictionMapping.aspx.cs">
+      <DependentUpon>ExJuridictionMapping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\ExJuridictionMapping.aspx.designer.cs">
+      <DependentUpon>ExJuridictionMapping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\FeeDetails.aspx.cs">
+      <DependentUpon>FeeDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\FeeDetails.aspx.designer.cs">
+      <DependentUpon>FeeDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\JurisdictionWiseFee.aspx.cs">
+      <DependentUpon>JurisdictionWiseFee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\JurisdictionWiseFee.aspx.designer.cs">
+      <DependentUpon>JurisdictionWiseFee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\Menu.ascx.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\MultipleChallan.aspx.cs">
+      <DependentUpon>MultipleChallan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\MultipleChallan.aspx.designer.cs">
+      <DependentUpon>MultipleChallan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\PaymentDtls.aspx.cs">
+      <DependentUpon>PaymentDtls.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\PaymentDtls.aspx.designer.cs">
+      <DependentUpon>PaymentDtls.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\PaymentUpdate.aspx.cs">
+      <DependentUpon>PaymentUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\PaymentUpdate.aspx.designer.cs">
+      <DependentUpon>PaymentUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\ExistingRetailerReport.aspx.cs">
+      <DependentUpon>ExistingRetailerReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\ExistingRetailerReport.aspx.designer.cs">
+      <DependentUpon>ExistingRetailerReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\RetailerReport_Individual.aspx.cs">
+      <DependentUpon>RetailerReport_Individual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\RetailerReport_Individual.aspx.designer.cs">
+      <DependentUpon>RetailerReport_Individual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\CTELintegration.aspx.cs">
+      <DependentUpon>CTELintegration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\CTELintegration.aspx.designer.cs">
+      <DependentUpon>CTELintegration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\SupplierUpdate.aspx.cs">
+      <DependentUpon>SupplierUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\SupplierUpdate.aspx.designer.cs">
+      <DependentUpon>SupplierUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\VerifiedTransactions.aspx.cs">
+      <DependentUpon>VerifiedTransactions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\VerifiedTransactions.aspx.designer.cs">
+      <DependentUpon>VerifiedTransactions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\Retailer_ResetPassword.aspx.cs">
+      <DependentUpon>Retailer_ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\Retailer_ResetPassword.aspx.designer.cs">
+      <DependentUpon>Retailer_ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\ShamshabadReport.aspx.cs">
+      <DependentUpon>ShamshabadReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\ShamshabadReport.aspx.designer.cs">
+      <DependentUpon>ShamshabadReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\SP_Challan_Update.aspx.cs">
+      <DependentUpon>SP_Challan_Update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\SP_Challan_Update.aspx.designer.cs">
+      <DependentUpon>SP_Challan_Update.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\SupplierReport.aspx.cs">
+      <DependentUpon>SupplierReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\SupplierReport.aspx.designer.cs">
+      <DependentUpon>SupplierReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\User_Creation.aspx.cs">
+      <DependentUpon>User_Creation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\User_Creation.aspx.designer.cs">
+      <DependentUpon>User_Creation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NICAdmin\RetailersReport.aspx.cs">
+      <DependentUpon>RetailersReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NICAdmin\RetailersReport.aspx.designer.cs">
+      <DependentUpon>RetailersReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Primary_Distillery.aspx.cs">
+      <DependentUpon>Primary_Distillery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Primary_Distillery.aspx.designer.cs">
+      <DependentUpon>Primary_Distillery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrintPage.aspx.cs">
+      <DependentUpon>PrintPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Retailer\AvailableRetailers.aspx.cs">
+      <DependentUpon>AvailableRetailers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\AvailableRetailers.aspx.designer.cs">
+      <DependentUpon>AvailableRetailers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\BankWiseReport.aspx.cs">
+      <DependentUpon>BankWiseReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\BankWiseReport.aspx.designer.cs">
+      <DependentUpon>BankWiseReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\Challan_Update_FailurePayments.aspx.cs">
+      <DependentUpon>Challan_Update_FailurePayments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\Challan_Update_FailurePayments.aspx.designer.cs">
+      <DependentUpon>Challan_Update_FailurePayments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\RetailersIsActive_Report.aspx.cs">
+      <DependentUpon>RetailersIsActive_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\RetailersIsActive_Report.aspx.designer.cs">
+      <DependentUpon>RetailersIsActive_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\SFTTransDate.aspx.cs">
+      <DependentUpon>SFTTransDate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\SFTTransDate.aspx.designer.cs">
+      <DependentUpon>SFTTransDate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\ChallanUpdate.aspx.cs">
+      <DependentUpon>ChallanUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\ChallanUpdate.aspx.designer.cs">
+      <DependentUpon>ChallanUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\CPEPayment_Report.aspx.cs">
+      <DependentUpon>CPEPayment_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\CPEPayment_Report.aspx.designer.cs">
+      <DependentUpon>CPEPayment_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\DepotSelection.aspx.cs">
+      <DependentUpon>DepotSelection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\DepotSelection.aspx.designer.cs">
+      <DependentUpon>DepotSelection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\PaymentRetailarDtls_MD.aspx.cs">
+      <DependentUpon>PaymentRetailarDtls_MD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\PaymentRetailarDtls_MD.aspx.designer.cs">
+      <DependentUpon>PaymentRetailarDtls_MD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\RetailerSPVerifiedChallans.aspx.cs">
+      <DependentUpon>RetailerSPVerifiedChallans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\RetailerSPVerifiedChallans.aspx.designer.cs">
+      <DependentUpon>RetailerSPVerifiedChallans.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\RSPPaymentView.aspx.cs">
+      <DependentUpon>RSPPaymentView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\RSPPaymentView.aspx.designer.cs">
+      <DependentUpon>RSPPaymentView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\CPEPaymentView.aspx.cs">
+      <DependentUpon>CPEPaymentView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\CPEPaymentView.aspx.designer.cs">
+      <DependentUpon>CPEPaymentView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\DashboardRetailer.aspx.cs">
+      <DependentUpon>DashboardRetailer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\DashboardRetailer.aspx.designer.cs">
+      <DependentUpon>DashboardRetailer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\Depot_Mapping.aspx.cs">
+      <DependentUpon>Depot_Mapping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\Depot_Mapping.aspx.designer.cs">
+      <DependentUpon>Depot_Mapping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\Ledger_Report.aspx.cs">
+      <DependentUpon>Ledger_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\Ledger_Report.aspx.designer.cs">
+      <DependentUpon>Ledger_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\PaymentReceipt.aspx.cs">
+      <DependentUpon>PaymentReceipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\PaymentReceipt.aspx.designer.cs">
+      <DependentUpon>PaymentReceipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\PaymentRetailarDtls.aspx.cs">
+      <DependentUpon>PaymentRetailarDtls.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\PaymentRetailarDtls.aspx.designer.cs">
+      <DependentUpon>PaymentRetailarDtls.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\PaymentView.aspx.cs">
+      <DependentUpon>PaymentView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\PaymentView.aspx.designer.cs">
+      <DependentUpon>PaymentView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\RetailerProfile_Confirm.aspx.cs">
+      <DependentUpon>RetailerProfile_Confirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\RetailerProfile_Confirm.aspx.designer.cs">
+      <DependentUpon>RetailerProfile_Confirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\RetailerDashboard.aspx.cs">
+      <DependentUpon>RetailerDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\RetailerDashboard.aspx.designer.cs">
+      <DependentUpon>RetailerDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\RetailerPaymentView.aspx.cs">
+      <DependentUpon>RetailerPaymentView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\RetailerPaymentView.aspx.designer.cs">
+      <DependentUpon>RetailerPaymentView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\RetailerWiseReport.aspx.cs">
+      <DependentUpon>RetailerWiseReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\RetailerWiseReport.aspx.designer.cs">
+      <DependentUpon>RetailerWiseReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\Retailer_Upload.aspx.cs">
+      <DependentUpon>Retailer_Upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\Retailer_Upload.aspx.designer.cs">
+      <DependentUpon>Retailer_Upload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\Retailer_Upload_Update.aspx.cs">
+      <DependentUpon>Retailer_Upload_Update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\Retailer_Upload_Update.aspx.designer.cs">
+      <DependentUpon>Retailer_Upload_Update.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\Retailer_ViewPaymet.aspx.cs">
+      <DependentUpon>Retailer_ViewPaymet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\Retailer_ViewPaymet.aspx.designer.cs">
+      <DependentUpon>Retailer_ViewPaymet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\RetailerSpecialPayments.aspx.cs">
+      <DependentUpon>RetailerSpecialPayments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\RetailerSpecialPayments.aspx.designer.cs">
+      <DependentUpon>RetailerSpecialPayments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\RPaymentDtls.aspx.cs">
+      <DependentUpon>RPaymentDtls.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\RPaymentDtls.aspx.designer.cs">
+      <DependentUpon>RPaymentDtls.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\RPaymentDtls_LateFee.aspx.cs">
+      <DependentUpon>RPaymentDtls_LateFee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\RPaymentDtls_LateFee.aspx.designer.cs">
+      <DependentUpon>RPaymentDtls_LateFee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\SalesProceedingViewPayment.aspx.cs">
+      <DependentUpon>SalesProceedingViewPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\SalesProceedingViewPayment.aspx.designer.cs">
+      <DependentUpon>SalesProceedingViewPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\SftReport.aspx.cs">
+      <DependentUpon>SftReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\SftReport.aspx.designer.cs">
+      <DependentUpon>SftReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\SFT_BankName.aspx.cs">
+      <DependentUpon>SFT_BankName.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\SFT_BankName.aspx.designer.cs">
+      <DependentUpon>SFT_BankName.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\SFT_Challans.aspx.cs">
+      <DependentUpon>SFT_Challans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\SFT_Challans.aspx.designer.cs">
+      <DependentUpon>SFT_Challans.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retailer\Sft_Ledger_Trans_Pending_Report.aspx.cs">
+      <DependentUpon>Sft_Ledger_Trans_Pending_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Retailer\Sft_Ledger_Trans_Pending_Report.aspx.designer.cs">
+      <DependentUpon>Sft_Ledger_Trans_Pending_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RSandDs.aspx.cs">
+      <DependentUpon>RSandDs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RSandDs.aspx.designer.cs">
+      <DependentUpon>RSandDs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesGazette.aspx.cs">
+      <DependentUpon>SalesGazette.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesGazette.aspx.designer.cs">
+      <DependentUpon>SalesGazette.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Secondary_Distillery.aspx.cs">
+      <DependentUpon>Secondary_Distillery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Secondary_Distillery.aspx.designer.cs">
+      <DependentUpon>Secondary_Distillery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service_Chart.aspx.cs">
+      <DependentUpon>Service_Chart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service_Chart.aspx.designer.cs">
+      <DependentUpon>Service_Chart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SHO\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SHO\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SHO\EventPermission.aspx.cs">
+      <DependentUpon>EventPermission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SHO\EventPermission.aspx.designer.cs">
+      <DependentUpon>EventPermission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SHO\EventUpdate_SHO.aspx.cs">
+      <DependentUpon>EventUpdate_SHO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SHO\EventUpdate_SHO.aspx.designer.cs">
+      <DependentUpon>EventUpdate_SHO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SHO\Event_MandalTransfer.aspx.cs">
+      <DependentUpon>Event_MandalTransfer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SHO\Event_MandalTransfer.aspx.designer.cs">
+      <DependentUpon>Event_MandalTransfer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SHO\SHO.aspx.cs">
+      <DependentUpon>SHO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SHO\SHO.aspx.designer.cs">
+      <DependentUpon>SHO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SHO\SHO_EventReport.aspx.cs">
+      <DependentUpon>SHO_EventReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SHO\SHO_EventReport.aspx.designer.cs">
+      <DependentUpon>SHO_EventReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SupGazette.aspx.cs">
+      <DependentUpon>SupGazette.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupGazette.aspx.designer.cs">
+      <DependentUpon>SupGazette.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\Dtls_Retailers.aspx.cs">
+      <DependentUpon>Dtls_Retailers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier\Dtls_Retailers.aspx.designer.cs">
+      <DependentUpon>Dtls_Retailers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\EventPermitHome.aspx.cs">
+      <DependentUpon>EventPermitHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier\HOA.aspx.cs">
+      <DependentUpon>HOA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier\HOA.aspx.designer.cs">
+      <DependentUpon>HOA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\MST_Retailers.aspx.cs">
+      <DependentUpon>MST_Retailers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier\MST_Retailers.aspx.designer.cs">
+      <DependentUpon>MST_Retailers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\PaymentGDtls.aspx.cs">
+      <DependentUpon>PaymentGDtls.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier\PaymentGDtls.aspx.designer.cs">
+      <DependentUpon>PaymentGDtls.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\Reset_Password.aspx.cs">
+      <DependentUpon>Reset_Password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier\Reset_Password.aspx.designer.cs">
+      <DependentUpon>Reset_Password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\Supplier.aspx.cs">
+      <DependentUpon>Supplier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier\Supplier.aspx.designer.cs">
+      <DependentUpon>Supplier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\SupplierChallanUpdate.aspx.cs">
+      <DependentUpon>SupplierChallanUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier\SupplierChallanUpdate.aspx.designer.cs">
+      <DependentUpon>SupplierChallanUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\SupplierPaymentDtls.aspx.cs">
+      <DependentUpon>SupplierPaymentDtls.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier\SupplierPaymentDtls.aspx.designer.cs">
+      <DependentUpon>SupplierPaymentDtls.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\SupplierPaymentView.aspx.cs">
+      <DependentUpon>SupplierPaymentView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier\SupplierPaymentView.aspx.designer.cs">
+      <DependentUpon>SupplierPaymentView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\Supplier_AvailableReport.aspx.cs">
+      <DependentUpon>Supplier_AvailableReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier\Supplier_AvailableReport.aspx.designer.cs">
+      <DependentUpon>Supplier_AvailableReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\Supplier_Report.aspx.cs">
+      <DependentUpon>Supplier_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier\Supplier_Report.aspx.designer.cs">
+      <DependentUpon>Supplier_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\Type_DutiesFee.aspx.cs">
+      <DependentUpon>Type_DutiesFee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier\Type_DutiesFee.aspx.designer.cs">
+      <DependentUpon>Type_DutiesFee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\User_Creation.aspx.cs">
+      <DependentUpon>User_Creation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier\User_Creation.aspx.designer.cs">
+      <DependentUpon>User_Creation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\SqlHelper.cs" />
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Scripts\vendor\bootstrap-icons\bootstrap-icons.json" />
+    <Content Include="Scripts\vendor\bootstrap-icons\bootstrap-icons.scss" />
+    <Content Include="Scripts\vendor\bootstrap-icons\fonts\bootstrap-icons.woff" />
+    <Content Include="Scripts\vendor\bootstrap-icons\fonts\bootstrap-icons.woff2" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap-utilities.css.map" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap-utilities.min.css.map" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap.rtl.css.map" />
+    <Content Include="Scripts\vendor\bootstrap\css\bootstrap.rtl.min.css.map" />
+    <Content Include="Scripts\vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\vendor\bootstrap\js\bootstrap.esm.js.map" />
+    <Content Include="Scripts\vendor\bootstrap\js\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Scripts\vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Scripts\vendor\boxicons\fonts\boxicons.eot" />
+    <Content Include="Scripts\vendor\boxicons\fonts\boxicons.ttf" />
+    <Content Include="Scripts\vendor\boxicons\fonts\boxicons.woff" />
+    <Content Include="Scripts\vendor\boxicons\fonts\boxicons.woff2" />
+    <Content Include="Scripts\vendor\swiper\swiper-bundle.min.js.map" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Excise_BE\Excise_BE.csproj">
+      <Project>{8f2b2a0a-4885-4427-b8f4-632a2f76cd6c}</Project>
+      <Name>Excise_BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Excise_DAL\Excise_DAL.csproj">
+      <Project>{d2e0f047-3e1e-4341-af7f-82e1d89ca1e6}</Project>
+      <Name>Excise_DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60403</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60403/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

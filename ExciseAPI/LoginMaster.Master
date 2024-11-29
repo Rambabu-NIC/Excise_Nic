@@ -1,0 +1,194 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LoginMaster.master.cs" Inherits="ExciseAPI.LoginMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="Content/CSS_NEW/custom_1.css" rel="stylesheet" />
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="Content/jquery-ui.css" rel="stylesheet" />
+    <link href="Content/CSS_NEW/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/CSS_NEW/styles.css" rel="stylesheet" />
+    <link href="Content/CSS_NEW/Dasboard.css" rel="stylesheet" />
+    <link href="Assets/CSS/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="Content/CSS_NEW/LoginCss/POPUP.css" rel="stylesheet" />
+    <link href="Content/font-awesome_New/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="Assets/Scripts/jquery.min.js"></script>
+    <script src="Assets/Scripts/modernizr.js"></script> 
+    <script src="Assets/Scripts/jquery.dataTables.min.js"></script>
+    <script src="Assets/Scripts/jquery-ui.js" type="text/javascript"></script>
+    <script src="Assets/Scripts/jquery.min.js"></script>
+    <script src="Assets/Scripts/jquery-ui.min.js"></script>
+    <script src="Scripts/vendor/aos/aos.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/bootbox.min.js" type="text/javascript"></script>
+    <script src="Content/JS_NEW/feedback.js"></script>
+    <script src="Scripts/js/Main1.js"></script>
+    <script src="Content/JS_NEW/bootstrap.min.js"></script>
+    <script src="Scripts/bootbox.min.js" type="text/javascript"></script>
+    <script src="Scripts/jquery-1.12.4.js"></script>
+    <script src="Scripts/jquery-ui.js"></script>
+    <script src="Scripts/jquery.min.js"></script>
+    <script src="Scripts/jquery.js"></script>
+    <script src="Assets/Scripts/bootstrap.js"></script>
+    <script src="Assets/Scripts/shaa256.js"></script>
+    <style type="text/css">
+        .hit
+        {
+            display: inline-block;
+            font-weight: bold;
+            font-size: large;
+            padding: 6px 6px 4px;
+            border-radius: 3px;
+            background: #212f3d;
+            color: White;
+            text-align: center;
+            margin: 20px auto;
+        }
+    </style>
+    <style>
+        .table-n
+        {
+            border: 1px solid black; /*height: 463px;*/
+            width: 441px;
+        }
+        .table-n tbody > tr
+        {
+            height: 40px;
+        }
+    </style>
+    <style>
+        table, th, td
+        {
+            border: 1px solid black;
+        }
+    </style>
+    <style>
+     
+      .max {
+         /*width: max-content;*/
+         height: max-content;
+      }
+   </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body style="overflow-x:hidden;">
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+        </asp:ScriptManager>
+      <nav class="navbar navbar-expand-lg navbar-inverse navbar-fixed-top py-1">
+            <div class="wrapper">
+                <div class="container-fluid">
+                     <div id="pcoded" class="pcoded load-height">
+        <div class="pcoded-inner-content" style="background-color: #01444e; margin-top: 2px;
+            padding-left: 25px;">
+            <div class="row align-items-end">
+                <div class="col-lg-1">
+                    <div class="page-header-title">
+                        <div class="d-inline">
+                            <img src="Assets/images/tg.png" alt="Telangana-Logo" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1">
+                    <div class="page-header-title">
+                        <div class="d-inline">
+                            <img src="Assets/images/deptlogo.png" alt="digitalindia-Logo" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7" style="padding-top:0px; color: White;">
+                    <h1 style="margin-top: 0px;text-align:center">
+                        <font size="6px">Government of Telangana</font></h1>
+                    <h1 style="text-align:center">
+                        <font size="6px">Prohibition & Excise Department</font>
+                    </h1>
+                    <%--<h1>
+                        <font size="3px">Excise Revenue Collection System</font>
+                    </h1>--%>
+                </div>
+               <%--  <div class="col-lg-1">
+                    <div class="page-header-title">
+                        <div class="d-inline">
+                            <img  src="Assets/images/cm1.png" alt="Telangana-Logo" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1" style=" margin-left:50px">
+                    <div class="page-header-title">
+                        <div class="d-inline">
+                            <img src="Assets/images/em1.png"  alt="Telangana-Logo" />
+                        </div>
+                    </div>
+                </div>--%>
+            </div>
+        </div>
+    </div>
+                  <%--  <div class="navbar-header hidden-sm hidden-xs">
+                        <a class="navbar-brand white text-center txt-logo">
+                            <img src="Assets/images/tg.png" style="width: 100px; height: 100px" /></a>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <h2 class="text-center" style="color: #ffffff; font-style: italic; font-size: 22px;">Government of Telangana<br />
+                            <span class="sm-txt p-0 m-0" style="font-style: normal; font-size: 20px;">Prohibition & Excise Department</span>
+                            <br />
+                            <span runat="server" id="Master_spn_RoleName" style="font-style: normal; font-size: 15px;" class="sm-txt p-0 m-0"></span>
+                        </h2>
+                    </div>
+                    <div class="navbar-header hidden-sm hidden-xs">
+                        <a class="navbar-brand white text-right txt-logo">
+                           <img  src="Assets/images/cm1.png" alt="Telangana-Logo" style="width:150px;height:150px" /></a>
+                        <a class="navbar-brand white text-right txt-logo">
+                            <img src="Assets/images/em1.png"  alt="Telangana-Logo" style="width:150px;height:150px" />
+                            </a>
+                        <a class="navbar-brand white text-right txt-logo">
+                            <img src="Assets/images/digital.png" style="width: 100px; height: 100px" /></a>
+                    </div>--%>
+                </div>
+
+                <div class="navbar-nav ms-auto my-2 my-lg-0 collapse navbar-collapse">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="navbar-collapse collapse" id="DivMenu" runat="server">
+                        <ul class="nav navbar-nav">
+                            <li><a href="Index.aspx">Home</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Citizen Charter</a></li>
+                            <li><a href="#">RTI</a></li>
+                            <li><a href="#">Key Contacts</a></li>
+                            <li><a href="#">Acts & Rules</a></li>
+                            <li class="nav-item d-block"><a href="../Event/G.O_PermitRegistration.pdf" target="_blank" class="nav-link">Go's & Circulars</a> </li>
+                        <li><a href="#">FAQ's</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li class="nav-item d-block">
+                            <a href="RDLCReports/UserManual_Retailers.pdf" target="_blank"  class="nav-link">Retailer User Manual</a>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li style="float: right;margin-right:20px;"><a href="Login.aspx">Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="content content-pad max" style="padding-bottom: 0px; margin-top: 13%;">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </div>
+        <div class="content content-pad" style="padding-bottom: 0px; margin-top: 8px;">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+        </div>
+
+    </form>
+</body>
+</html>

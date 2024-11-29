@@ -1,0 +1,203 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Event.master.cs" Inherits="ExciseAPI.Event.Event" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Prohibition & Excise Department</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="NewStyles/assets/img/favicon.png" rel="icon">
+    <link href="NewStyles/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../NewStyles/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../NewStyles/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../NewStyles/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../NewStyles/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="../NewStyles/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="../NewStyles/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="../NewStyles/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+    <script src="../Assets/Scripts/jquery.min.js"></script>
+    <!-- Template Main CSS File -->
+    <link href="../NewStyles/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../NewStyles/assets/css/style.css" rel="stylesheet" />
+    <script src="../Resources/js/popper.min.js"></script>
+
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+        </asp:ScriptManager>
+        <!-- ======= Header ======= -->
+        <header id="header" class="header fixed-top d-flex align-items-center">
+
+            <div class="d-flex align-items-center justify-content-between">
+                <a href="index.aspx" class="logo d-flex align-items-center">
+                    <img src="../NewStyles/assets/img/tg.png" />
+                    <span class="d-none d-lg-block">Government of Telangana Prohibition & Excise Department</span>
+                    <span class="d-none d-lg-block"></span>
+                </a>
+            </div>
+               <i class="bi bi-list toggle-sidebar-btn"></i>
+            <!-- End Logo -->
+            
+
+        </header>
+        <!-- End Header -->
+
+        <!-- ======= Sidebar ======= -->
+        <aside id="sidebar" class="sidebar">
+
+            <ul class="sidebar-nav" id="sidebar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link " href="../Index.aspx">
+                        <i class="bi bi-grid"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link " href="../Event/EventStatus">
+                        <i class="bi bi-grid"></i>
+                        <span>Event Status</span>
+                    </a>
+                </li>
+                
+                 <li class="nav-item">
+                    <a class="nav-link " href="../Event/ApplicationStatus">
+                        <i class="bi bi-grid"></i>
+                        <span>Application Status</span>
+                    </a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link " href="../Event/DownloadPermission">
+                        <i class="bi bi-grid"></i>
+                        <span>Download Permission</span>
+                    </a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link " href="../Event/Ack_EventReg">
+                        <i class="bi bi-grid"></i>
+                        <span>Acknowledgement</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="../Event/EoDBDashboard">
+                        <i class="bi bi-grid"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link " href="../Event/DistrictWisePermitDetails">
+                        <i class="bi bi-grid"></i>
+                        <span>District Wise Permits Rejected</span>
+                    </a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link " href="../Event/AdditionalPayment">
+                        <i class="bi bi-grid"></i>
+                        <span>Balance Payment</span>
+                    </a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link " href="../Event/ApplicationPayment_Update.aspx">
+                        <i class="bi bi-grid"></i>
+                        <span>Pending Payments Update</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="https://ifmis.telangana.gov.in/cybertry_challandetails">
+                        <i class="bi bi-grid"></i>
+                        <span>Verify Cyber Challan Details</span>
+                    </a>
+                </li>
+              
+                <!-- End Dashboard Nav -->
+               
+                           
+                
+            
+                <!-- End Tables Nav -->
+
+               
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="../Login.aspx">
+                        <i class="bi bi-box-arrow-in-right"></i>
+                        <span>Login</span>
+                    </a>
+                </li>
+                <!-- End Login Page Nav -->
+
+                
+
+            </ul>
+           
+        </aside>
+        <!-- End Sidebar-->
+        <main id="main" class="main">
+
+            <section class="section dashboard">
+                <div class="container-fluid content-pad" style="padding-bottom: 0px; margin-top: 10px;">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                </div>
+
+                <div class="container-fluid content-pad" style="padding-bottom: 0px; margin-top: 10px;">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+                </div>
+            </section>
+
+        </main>
+        
+   
+
+    </form>
+
+     <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="copyright">
+            &copy; Copyright <strong><span>NIC</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            Designed by <a href="https://bootstrapmade.com/">NIC</a>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+    <!-- Vendor JS Files -->
+    <script src="../NewStyles/assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="../NewStyles/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../NewStyles/assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="../NewStyles/assets/vendor/echarts/echarts.min.js"></script>
+    <script src="../NewStyles/assets/vendor/quill/quill.min.js"></script>
+    <script src="../NewStyles/assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="../NewStyles/assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="../NewStyles/assets/vendor/php-email-form/validate.js"></script>
+    <script src="../NewStyles/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="../NewStyles/assets/vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="../NewStyles/assets/js/main.js"></script>
+
+
+
+</body>
+
+</html>

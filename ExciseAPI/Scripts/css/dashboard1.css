@@ -1,0 +1,245 @@
+﻿
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    padding: 30px;
+}
+
+/* Title Styles */
+.section-title {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+    .section-title label {
+        font-size: 35px;
+        font-weight: 700;
+        color: #333;
+    }
+
+/* Cards Container */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start; 
+    margin-top: 20px; 
+}
+
+.dashboard-card {
+    width: 200px; 
+    height: 100px; 
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    overflow: hidden; 
+}
+
+    .dashboard-card p {
+        font-size: 14px; 
+        font-weight: bold;
+        color: #fff;
+        margin-bottom: 5px;
+        text-decoration: none; 
+    }
+
+    .dashboard-card .card-value {
+        font-size: 18px; 
+        color: #fff;
+        white-space: nowrap; 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+    }
+
+
+#card1 {
+    background: linear-gradient(to right, #ffbf96, #fe7096);
+}
+
+#card2 {
+    background: linear-gradient(to right, #90caf9, #047edf);
+}
+
+#card3 {
+    background: linear-gradient(to right, #84d9d2, #07cdae);
+}
+
+#card4 {
+    background: linear-gradient(to right, #9c27b0, #3f51b5);
+}
+
+#card5 {
+    background: linear-gradient(to right, #ffeb3b, #fbc02d);
+}
+
+#card_1 {
+    background: linear-gradient(to right, #d32f2f, #e57373);
+}
+
+#card_2 {
+    background: linear-gradient(to right, #81c784, #388e3c);
+}
+
+#card_3 {
+    background: linear-gradient(to right, #f44336, #e57373);
+}
+
+#card_4 {
+    background: linear-gradient(to right, #9c27b0, #673ab7);
+}
+
+#card_5 {
+    background: linear-gradient(to right, #fdd835, #fbc02d);
+}
+
+#card_6 {
+    background: linear-gradient(to right, #1976d2, #1565c0);
+}
+
+#card_7 {
+    background: linear-gradient(to right, #8e24aa, #6a1b9a);
+}
+
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #ffffff, #00bfff);
+}
+
+
+.card-title {
+    font-size: 16px;
+    color: #ddd;
+}
+
+.card-value {
+    font-size: 1.2em;
+    color: #fff;
+}
+
+
+@media (max-width: 768px) {
+    .cards-container {
+        justify-content: flex-start; 
+    }
+
+    .dashboard-card {
+        width: 180px; 
+        height: 90px; 
+    }
+}
+
+
+/*-------------------*/
+
+.table-container-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%; 
+    margin: 0;
+}
+
+.table-container {
+    width: 90%;
+    max-width: 90%; 
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-left: 6%;
+}
+
+.status-table {
+    width: 100%; 
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+    .status-table th, .status-table td {
+        padding: 8px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+
+    .status-table th {
+        background-color: #003366;
+        color: white;
+        font-size: 14px;
+    }
+
+    .status-table tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    .status-table tbody tr:nth-child(odd) {
+        background-color: #ffffff;
+    }
+
+    .status-table tbody tr:hover {
+        background-color: #e0e0e0;
+    }
+
+.pagination {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .pagination button {
+        background-color: #047edf;
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        margin: 0 5px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+        .pagination button:hover {
+            background-color: #0056b3;
+        }
+
+        .pagination button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+.table-scroll-container {
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: auto;
+    border: 1px solid #ccc;
+}
+
+.close-btn {
+    padding: 10px 30px 5px 30px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 91%;
+    margin-top: -1%
+}
+
+    .close-btn:hover {
+        background-color: #cc0000;
+    }
+

@@ -1,0 +1,1979 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="ExciseAPI.Site1" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Prohibition & Excise Department</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="NewStyles/assets/img/tg.png" rel="icon">
+    <link href="NewStyles/assets/img/tg.png" rel="apple-touch-icon">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="NewStyles/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="NewStyles/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <%--    <link href="NewStyles/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="NewStyles/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="NewStyles/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="NewStyles/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="NewStyles/assets/vendor/simple-datatables/style.css" rel="stylesheet">--%>
+    <script src="../NewStyles/assets/js/shaa256.js"></script>
+    <!-- Template Main CSS File -->
+    <link href="NewStyles/assets/css/style.css" rel="stylesheet" />
+    <link href="NewStyles/assets/css/cardstyles.css" rel="stylesheet" />
+   
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        .logo img {
+            height: 50px;
+        }
+
+        .logo span {
+            color: #007bff;
+            font-weight: bold;
+            font-size: 18px;
+            margin-left: 10px;
+        }
+
+        .nav-profile img {
+            border: 2px solid #007bff;
+        }
+
+        .nav-profile span {
+            color: #000;
+            font-weight: 500;
+        }
+
+        .nav-item .dropdown-menu {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding-right: 15px;
+        }
+
+        .dropdown-menu-arrow::before {
+            border-bottom-color: #ffffff;
+        }
+
+        .dropdown-menu .dropdown-header {
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .dropdown-menu .dropdown-item {
+            padding: 10px;
+            color: #333;
+        }
+
+            .dropdown-menu .dropdown-item:hover {
+                background-color: #f8f9fa;
+                color: #007bff;
+            }
+
+        .dropdown-pe-12 {
+            padding-right: 10rem;
+        }
+    </style>
+    <script>
+        debugger;
+   document.addEventListener("DOMContentLoaded", function () {
+       var toggleButton = document.getElementById('toggle-sidebar-btn');
+       var sidebar = document.getElementById('sidebar');
+
+       toggleButton.addEventListener('click', function () {
+           sidebar.classList.toggle('active');
+       });
+   });
+</script>
+<%--<style>
+   .sidebar {
+       position: fixed;
+       left: 0;
+       top: 0;
+       width: 250px;
+       height: 100%;
+       background: #333;
+       color: #fff;
+       transform: translateX(-100%);
+       transition: transform 0.3s ease-in-out;
+   }
+
+   .sidebar.active {
+       transform: translateX(0);
+   }
+</style>--%>
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+        </asp:ScriptManager>
+        <header id="header" class="header fixed-top d-flex align-items-center">
+
+            <div class="d-flex align-items-center justify-content-between">
+                <a href="index.aspx" class="logo d-flex align-items-center">
+                    <img src="../NewStyles/assets/img/tg.png" alt="Logo" />
+                    <span class="d-none d-lg-block">Government of Telangana Prohibition & Excise Department</span>
+                </a>
+
+                <%--                <button id="toggle-sidebar" class="btn btn-light">
+                    <i class="bi bi-list"></i>
+                </button>--%>
+           
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+             </div>
+
+            <nav class="header-nav ms-auto">
+                <ul class="d-flex align-items-center ">
+                    <li class="nav-item dropdown dropdown-pe-12">
+                        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                            <i class="bi bi-person"></i>
+                            <br />
+                            <span runat="server" id="Master_spn_RoleName" style="font-style: normal; font-size: 15px;" class="sm-txt p-0 m-0"></span>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                            <li class="dropdown-header">
+                                <%-- <h6>John Doe</h6>
+                        <span>Administrator</span>--%>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <%--<a class="dropdown-item d-flex align-items-center" href="#">
+                            <i class="bi bi-person"></i>
+                            <span>My Profile</span>
+                        </a>--%>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <%--<a class="dropdown-item d-flex align-items-center" href="#">
+                            <i class="bi bi-gear"></i>
+                            <span>Account Settings</span>
+                        </a>--%>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <%--<a class="dropdown-item d-flex align-items-center" href="#">
+                            <i class="bi bi-question-circle"></i>
+                            <span>Need Help?</span>
+                        </a>--%>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item d-flex align-items-center" href="../Logout.aspx">
+                                    <i class="bi bi-box-arrow-right"></i>
+                                    <span>Sign Out</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- End Profile Dropdown Items -->
+                    </li>
+                    <!-- End Profile Nav -->
+                </ul>
+            </nav>
+
+        </header>
+
+
+
+        <div id="DivRetailerMenu" runat="server" visible="false">
+            <aside id="sidebar" class="sidebar">
+
+                <ul class="sidebar-nav" id="sidebar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Retailer/DashboardRetailer.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+                            <i class="bi bi-layout-text-window-reverse"></i><span>CPE Payments</span><i class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                            <li>
+                                <a class="dropdown-item" href="../Retailer/Retailer_ViewPaymet.aspx">
+                                    <i class="bi bi-circle"></i><span>CPE View Payments</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../Retailer/RPaymentDtls.aspx">
+                                    <i class="bi bi-circle"></i><span>CPE Payments</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../Retailer/RPaymentDtls_LateFee.aspx">
+                                    <i class="bi bi-circle"></i><span>CPE Payments Late Fee</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../Retailer/CPEPayment_Report.aspx">
+                                    <i class="bi bi-circle"></i><span>CPE Payments Report</</span>
+                                </a>
+
+                            </li>
+                        </ul>
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" data-bs-target="#tables-nav1" data-bs-toggle="collapse" href="#">
+                                <i class="bi bi-layout-text-window-reverse"></i><span>Sales Proceeding Payments</span><i class="bi bi-chevron-down ms-auto"></i>
+                            </a>
+                            <ul id="tables-nav1" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                                <li>
+                                    <a class="dropdown-item" href="../Retailer/SalesProceedingViewPayment.aspx">
+                                        <i class="bi bi-circle"></i><span>Sales Proceeding
+                                    <br />
+                                            View Payment</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="../Retailer/PaymentRetailarDtls.aspx">
+                                        <i class="bi bi-circle"></i><span>Retailer Sales<br />
+                                            Proceeding Payments</</span>
+                                    </a>
+
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="../Retailer/RetailerSPVerifiedChallans.aspx">
+                                        <i class="bi bi-circle"></i><span>Retailer Sales<br />
+                                            Proceeding verified
+                                    <br />
+                                            Challans Report</</span>
+                                    </a>
+
+                                </li>
+
+                            </ul>
+                        </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Renewals/BARRenewal.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Renewal Application</span>
+                        </a>
+                    </li>
+                    <%-- <li class="nav-item">
+                    <a class="nav-link collapsed" href="../Retailer/RetailerSpecialPayments.aspx">
+                        <i class="bi bi-card-list"></i>
+                        <span>Payment Details</span>
+                    </a>
+                </li>
+                <li class="nav-item" id="Li2" runat="server" visible="false">
+                    <a class="nav-link collapsed" data-bs-target="#tables-nav1" data-bs-toggle="collapse" href="#">
+                        <i class="bi bi-layout-text-window-reverse"></i><span>Supplier Reports</span><i class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                     <ul id="tables-nav1" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                        <li>
+                            <a class="dropdown-item" href="../Retailer/SalesProceedingViewPayment.aspx">
+                                <i class="bi bi-circle"></i><span></span>
+                            </a>
+                        </li>
+                         </ul>
+                    </li>--%>
+
+
+
+
+
+
+
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Retailer/RetailerSpecialPayments.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Retailer Special Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Retailer/ChallanUpdate.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Payment Update</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Retailer/ChangePassword.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Change Password</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="https://ifmis.telangana.gov.in/cybertry_challandetails" target="_blank">
+                            <i class="bi bi-card-list"></i>
+                            <span>Verify Cyber Challan Details</span>
+                        </a>
+                    </li>
+                    <%--<li class="nav-item">
+                        <a class="nav-link collapsed" href="../Renewals/BARRenewal.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Renewal Application</span>
+                        </a>
+                    </li>--%>
+
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Logout.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+
+                    <!-- End Forms Nav -->
+
+
+                </ul>
+
+
+
+            </aside>
+        </div>
+
+        <div id="DivSupplier" runat="server" visible="false">
+            <aside id="sidebarSupplier" class="sidebar">
+
+                <ul class="sidebar-nav" id="sidebar-navSupplier">
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Supplier/SupplierPaymentDtls.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Payment Details</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Supplier/SupplierChallanUpdate.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Payment Update</span>
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link collapsed" data-bs-target="#tables-navSupplier" data-bs-toggle="collapse" href="#">
+                            <i class="bi bi-layout-text-window-reverse"></i><span>Reports</span><i class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                        <ul id="tables-navSupplier" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                            <li>
+                                <a class="dropdown-item" href="../Supplier/Supplier_Report.aspx">
+                                    <i class="bi bi-circle"></i><span>Supplier Report</span>
+                                </a>
+                            </li>
+
+
+                        </ul>
+
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="https://ifmis.telangana.gov.in/cybertry_challandetails" target="_blank">
+                            <i class="bi bi-card-list"></i>
+                            <span>Verify Cyber Challan Details</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Retailer/ChangePassword.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Change Password</span>
+                        </a>
+                    </li>
+                    <%--<li class="nav-item">
+                        <a class="nav-link collapsed" href="../Renewals/BARRenewal.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Renewal Application</span>
+                        </a>
+                    </li>--%>
+
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Logout.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+
+
+            </aside>
+        </div>
+
+
+        <div id="DIVAC" runat="server" visible="false">
+            <aside id="sidebarAC" class="sidebar">
+
+                <ul class="sidebar-nav" id="sidebar-navAC">
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../SHO/EventUpdate_SHO.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Event Update</span>
+                        </a>
+                    </li>
+                    <%--<li class="nav-item">
+                        <a class="nav-link collapsed" href="../Home_Org.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>EODB</span>
+                        </a>
+                    </li>--%>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../SHO/Event_MandalTransfer.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Mandal Update</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../NICAdmin/Create_Retailer.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Create Retailer</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link collapsed" href="../Event/EventPermit_Issued_Rejected_Report.aspx">
+                            <i class="bi bi-card-list"></i><span>Event Permits Approved
+                                        <br />
+                                OR Rejected Report</</span>
+                        </a>
+
+                    </li>
+
+                    <%--<li class="nav-item">
+                        <a class="nav-link collapsed" href="../NICAdmin/Signature.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Create Retailer</span>
+                        </a>
+                    </li>--%>
+                   
+
+                    <li class="nav-item">
+
+                        <a class="nav-link collapsed" data-bs-target="#tables-navACRetailerReports" data-bs-toggle="collapse" href="#">
+                            <i class="bi bi-layout-text-window-reverse"></i><span>Retailer Reports</span><i class="bi bi-chevron-down ms-auto"></i>
+
+                        </a>
+                        <ul id="tables-navACRetailerReports" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/RetailerReport_Individual.aspx">
+                                    <i class="bi bi-circle"></i><span>District Wise Retailer
+                                                <br />
+                                        CPE Payments Report</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/ExistingRetailerReport.aspx">
+                                    <i class="bi bi-circle"></i><span>Exsiting Retailer Report</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../Depot/SalesProceedReport.aspx">
+                                    <i class="bi bi-circle"></i><span>Sales Proceeds Report</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../Depot/SalesProceedPendingPaymentReport.aspx">
+                                    <i class="bi bi-circle"></i><span>Sales Proceeds<br />
+                                        Pending Report</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/VerifiedTransactions.aspx">
+                                    <i class="bi bi-circle"></i><span>Verified Challans</</span>
+                                </a>
+
+                            </li>
+                        </ul>
+
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="nav-link collapsed" data-bs-target="#tables-navACSupplierReports" data-bs-toggle="collapse" href="#">
+                            <i class="bi bi-layout-text-window-reverse"></i><span>Supplier Reports</span><i class="bi bi-chevron-down ms-auto"></i>
+
+                        </a>
+                        <ul id="tables-navACSupplierReports" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                            <li>
+                                        <a class="dropdown-item" href="../Admin/Rpt_User_Creation.aspx">
+                                            <i class="bi bi-circle"></i><span>Manufacturer Details<br />
+                                                Report</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="../Admin/AbstractRpt.aspx">
+                                            <i class="bi bi-circle"></i><span>Supplier Payment<br />
+                                                Abstract Report</</span>
+                                        </a>
+
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="../NICAdmin/Supplier_Payments_StateWise.aspx">
+                                            <i class="bi bi-circle"></i><span>Supplier Payments Report</</span>
+                                        </a>
+
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="../Supplier/Supplier_AvailableReport.aspx">
+                                            <i class="bi bi-circle"></i><span>Supplier Manufacturer
+                                                <br />
+                                                Report</</span>
+                                        </a>
+
+                                    </li>
+                        </ul>
+
+                    </li>
+                     <li class="nav-item">
+
+                        <a class="nav-link collapsed" data-bs-target="#tables-navACTGBCLReports" data-bs-toggle="collapse" href="#">
+                            <i class="bi bi-layout-text-window-reverse"></i><span>TGBCL Reports</span><i class="bi bi-chevron-down ms-auto"></i>
+
+                        </a>
+                        <ul id="tables-navACTGBCLReports" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                             <%--<li>
+                                        <a class="dropdown-item" href="../Retailer/AvailableRetailers.aspx">
+                                            <i class="bi bi-circle"></i><span>Available Retailers Report</</span>
+                                        </a>
+
+                                    </li>--%>
+                                    <li>
+                                        <a class="dropdown-item" href="../Retailer/BankWiseReport.aspx">
+                                            <i class="bi bi-circle"></i><span>BankWise Report</</span>
+                                        </a>
+
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="../Retailer/Ledger_Report.aspx">
+                                            <i class="bi bi-circle"></i><span>Ledger Report</</span>
+                                        </a>
+
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="../Retailer/SftReport.aspx">
+                                            <i class="bi bi-circle"></i><span>SFT Report</</span>
+                                        </a>
+
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="../Retailer/Sft_Ledger_Trans_Pending_Report.aspx">
+                                            <i class="bi bi-circle"></i><span>Pending Report</</span>
+                                        </a>
+
+                                    </li>
+                        </ul>
+
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="nav-link collapsed" data-bs-target="#tables-navACMaster" data-bs-toggle="collapse" href="#">
+                            <i class="bi bi-layout-text-window-reverse"></i><span>Masters</span><i class="bi bi-chevron-down ms-auto"></i>
+
+                        </a>
+                        <ul id="tables-navACMaster" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                            <li>
+                                <a class="dropdown-item" href="../Admin/User_Creation.aspx">
+                                    <i class="bi bi-circle"></i><span>Supplier Creation</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../Admin/Type_DutiesFee.aspx">
+                                    <i class="bi bi-circle"></i><span>Type Of Duties/Fee</</span>
+                                </a>
+
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="../Admin/HOA.aspx">
+                                    <i class="bi bi-circle"></i><span>Treasury Account Head</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../Retailer/Retailer_Upload.aspx">
+                                    <i class="bi bi-circle"></i><span>Retailer Insert</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../Retailer/Retailer_Upload_Update.aspx">
+                                    <i class="bi bi-circle"></i><span>Retailer Update</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../Admin/InstallementMaster.aspx">
+                                    <i class="bi bi-circle"></i><span>Installment Update</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../Admin/TypeOfPayment.aspx">
+                                    <i class="bi bi-circle"></i><span>Payment Type Master</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/Retailer_ResetPassword.aspx">
+                                    <i class="bi bi-circle"></i><span>Retailer Reset Password</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/Pending_Challan_Update.aspx">
+                                    <i class="bi bi-circle"></i><span>Pending Challan Update</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/CTELintegration.aspx">
+                                    <i class="bi bi-circle"></i><span>CTEL Integration</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/SP_Challan_Update.aspx">
+                                    <i class="bi bi-circle"></i><span>SP Challan Update</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/SupplierUpdate.aspx">
+                                    <i class="bi bi-circle"></i><span>Supplier Update</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../Retailer/Challan_Update_FailurePayments.aspx">
+                                    <i class="bi bi-circle"></i><span>Retailer Failure<br />
+                                        Payment Update</</span>
+                                </a>
+
+                            </li>
+                        </ul>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link collapsed" data-bs-target="#tables-navRenewal" data-bs-toggle="collapse" href="#">
+                            <i class="bi bi-layout-text-window-reverse"></i><span>Renewal Application</span><i class="bi bi-chevron-down ms-auto"></i>
+
+                        </a>
+                        <ul id="tables-navRenewal" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                            <li>
+                                <a class="dropdown-item" href="../Renewals/DepartmentApplications.aspx">
+                                    <i class="bi bi-circle"></i><span>Pending Applications</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../Renewals/FWDRenewalApplicationsGrid.aspx">
+                                    <i class="bi bi-circle"></i><span>Forwarded Applications</</span>
+                                </a>
+
+                            </li>
+
+
+                        </ul>
+
+                    </li>
+
+                    <!-- Main Menu Item for Masters -->
+                    <%--<li class="nav-item">
+    <a class="nav-link collapsed" data-bs-toggle="collapse" data-bs-target="#mastersMenu" href="#">
+        <i class="bi bi-layout-text-window-reverse"></i><span>Masters</span><i class="bi bi-chevron-down ms-auto"></i>
+    </a>
+
+    <!-- Masters Submenu -->
+    <ul id="mastersMenu" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+        <li>
+            <a class="dropdown-item" href="../Admin/User_Creation.aspx">
+                <i class="bi bi-circle"></i><span>Supplier Creation</span>
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="../Admin/Type_DutiesFee.aspx">
+                <i class="bi bi-circle"></i><span>Type Of Duties/Fee</span>
+            </a>
+        </li>
+        <!-- Additional Links for Masters -->
+        <li>
+            <a class="dropdown-item" href="../Admin/HOA.aspx">
+                <i class="bi bi-circle"></i><span>Treasury Account Head</span>
+            </a>
+        </li>
+        <!-- Nested Reports Submenu under Masters -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-toggle="collapse" data-bs-target="#reportsUnderMastersMenu" href="#">
+                <i class="bi bi-layout-text-window-reverse"></i><span>Reports</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="reportsUnderMastersMenu" class="nav-content collapse" data-bs-parent="#mastersMenu">
+                <li>
+                    <a class="dropdown-item" href="../NICAdmin/RetailersInstallmentReport.aspx">
+                        <i class="bi bi-circle"></i><span>Retailers Installment Report</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="../NICAdmin/ExistingRetailerReport.aspx">
+                        <i class="bi bi-circle"></i><span>Existing Retailer Report</span>
+                    </a>
+                </li>
+                <!-- Add more report links as needed -->
+            </ul>
+        </li>
+        
+        <!-- Additional Links for Masters continued -->
+        <li>
+            <a class="dropdown-item" href="../Retailer/Retailer_Upload.aspx">
+                <i class="bi bi-circle"></i><span>Retailer Insert</span>
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="../NICAdmin/CTELintegration.aspx">
+                <i class="bi bi-circle"></i><span>CTEL Integration</span>
+            </a>
+        </li>
+    </ul>
+</li>--%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Logout.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+
+
+
+            </aside>
+        </div>
+
+
+        <div id="DIVSHO" runat="server" visible="false">
+            <aside id="sidebarSHO" class="sidebar">
+
+                <ul class="sidebar-nav" id="sidebar-navSHO">
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../SHO/SHO.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>SHO Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../SHO/EventPermission.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Pending For Approval</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../SHO/SHO_EventReport.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Event Report</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#tables-navRenewals" role="button" aria-expanded="false" aria-controls="tables-navRenewals">
+                            <i class="bi bi-layout-text-window-reverse"></i>
+                            <span>Renewal Application</span>
+                            <i class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                        <ul id="tables-navRenewals" class="collapse nav-content" data-bs-parent="#sidebar-navSHO">
+                            <li>
+                                <a class="dropdown-item" href="../Renewals/DepartmentApplications.aspx">
+                                    <i class="bi bi-circle"></i><span>Pending Applications</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../Renewals/FWDRenewalApplicationsGrid.aspx">
+                                    <i class="bi bi-circle"></i><span>Forwarded Applications</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../SHO/ChangePassword.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Change Password</span>
+                        </a>
+                    </li>
+                    <%-- <li><a href="../Renewals/DepartmentApplications.aspx">Renewal Details</a></li>--%>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Logout.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+
+
+            </aside>
+        </div>
+
+        <div id="DIVStateAdmin" runat="server" visible="false">
+            <aside id="sidebarState" class="sidebar">
+
+                <ul class="sidebar-nav" id="sidebar-navState">
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../NICAdmin/Dashboard.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../NICAdmin/AbstractRpt.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Payment Abstract</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../NICAdmin/EventPermitSearch.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Event Permit Search</span>
+                        </a>
+                    </li>
+
+                    <%--<li class="nav-item">
+                        <a class="nav-link collapsed" href="../NICAdmin/Dashboard_StateAdmin.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Admin Dashboard</span>
+                        </a>
+                    </li>--%>
+                    <li class="nav-item">
+
+                        <a class="nav-link collapsed" data-bs-target="#tables-navSAdmin" data-bs-toggle="collapse" href="#">
+                            <i class="bi bi-layout-text-window-reverse"></i><span>Masters</span><i class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                        <ul id="tables-navSAdmin" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/DistrictExStationMapping.aspx">
+                                    <i class="bi bi-circle"></i><span>District Station Mapping</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/ExJuridictionMapping.aspx">
+                                    <i class="bi bi-circle"></i><span>Excise Jurisdiction Mapping</</span>
+                                </a>
+
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/DistrictRpt.aspx">
+                                    <i class="bi bi-circle"></i><span>District Master</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/ExciseDistrictRpt.aspx">
+                                    <i class="bi bi-circle"></i><span>Excise District Master</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/ExciseStationRpt.aspx">
+                                    <i class="bi bi-circle"></i><span>Excise Station Master</</span>
+                                </a>
+
+                            </li>
+
+
+                        </ul>
+
+                    </li>
+
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link collapsed" data-bs-target="#tables-navSAdminMaster" data-bs-toggle="collapse" href="#">
+                            <i class="bi bi-layout-text-window-reverse"></i><span>Reports</span><i class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                        <ul id="tables-navSAdminMaster" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/ExciseSHORpt.aspx">
+                                    <i class="bi bi-circle"></i><span>Excise SHO Details</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/ExciseDPEORpt.aspx">
+                                    <i class="bi bi-circle"></i><span>Excise DPEO Details</</span>
+                                </a>
+
+                            </li>
+
+                            <%--  <li>
+                                <a class="dropdown-item" href="../NICAdmin/FeeDetails.aspx">
+                                    <i class="bi bi-circle"></i><span>Fee Details</</span>
+                                </a>
+
+                            </li>--%>
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/JurisdictionWiseFee.aspx">
+                                    <i class="bi bi-circle"></i><span>Juridiction Wise<br />
+                                        Event Permits Fee</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/DistrictWiseAbstract.aspx">
+                                    <i class="bi bi-circle"></i><span>District Wise<br />
+                                        Event Permits Report</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/ExciseStationWiseAbstract.aspx">
+                                    <i class="bi bi-circle"></i><span>Event Report</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/Dashboard_ERCS_I.aspx">
+                                    <i class="bi bi-circle"></i><span>Supplier Payment Report</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/EventPermitWithPayment.aspx">
+                                    <i class="bi bi-circle"></i><span>Event Permits Report</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/SupplierReport.aspx">
+                                    <i class="bi bi-circle"></i><span>Supplier Report</</span>
+                                </a>
+
+                            </li>
+
+                        </ul>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../NICAdmin/DPEORestPassword.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>DPEO Reset Password</span>
+                        </a>
+                    </li>
+                    <%--<li class="nav-item">
+                        <a class="nav-link collapsed" href="../NICAdmin/User_Creation.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>User Creation</span>
+                        </a>
+                    </li>--%>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../NICAdmin/ChangePassword.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Change Password</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../NICAdmin/EventPermitPaymentUpdateE.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Manual Event Payment Update</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Logout.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+
+
+            </aside>
+        </div>
+
+
+
+        <div id="DivAdminMenu" runat="server" visible="false">
+            <aside id="sidebarAdmin" class="sidebar">
+
+                <ul class="sidebar-nav" id="sidebar-navAdmin">
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Admin/Dashboard.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Admin/AdminChallanUpdate.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Event Challan Update</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link collapsed" data-bs-target="#tables-navAdmin" data-bs-toggle="collapse" href="#">
+                            <i class="bi bi-layout-text-window-reverse"></i><span>Supplier</span><i class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                        <ul id="tables-navAdmin" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                            <li>
+                                <a class="dropdown-item" href="../Admin/Supplier.aspx">
+                                    <i class="bi bi-circle"></i><span>Supplier Creation</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../Admin/User_Creation.aspx">
+                                    <i class="bi bi-circle"></i><span>Supplier User Creation</</span>
+                                </a>
+
+                            </li>
+
+                            <%-- <li>
+                                <a class="dropdown-item" href="../Admin/DownloadPaymentDetails.aspx">
+                                    <i class="bi bi-circle"></i><span>Download Payment Details</</span>
+                                </a>
+
+                            </li>--%>
+                        </ul>
+
+                    </li>
+
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link collapsed" data-bs-target="#tables-navAdminMaster" data-bs-toggle="collapse" href="#">
+                            <i class="bi bi-layout-text-window-reverse"></i><span>Manufacture</span><i class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                        <ul id="tables-navAdminMaster" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                            <li>
+                                <a class="dropdown-item" href="../Admin/Manufacture.aspx">
+                                    <i class="bi bi-circle"></i><span>Create Manufacturer</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../Admin/Mst_TypeOfManufacturing.aspx">
+                                    <i class="bi bi-circle"></i><span>Type Of Manufacture</</span>
+                                </a>
+
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="../Admin/Mst_ManufMinorH.aspx">
+                                    <i class="bi bi-circle"></i><span>Manufacture Minor Head</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../Admin/Mst_ManufSH.aspx">
+                                    <i class="bi bi-circle"></i><span>Manufacture Sub Head</</span>
+                                </a>
+
+                            </li>
+
+
+                        </ul>
+
+                    </li>
+
+                    <%--<li class="nav-item">
+
+                        <a class="nav-link collapsed" data-bs-target="#tables-navEcms" data-bs-toggle="collapse" href="#">
+                            <i class="bi bi-layout-text-window-reverse"></i><span>ECMS</span><i class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                        <ul id="tables-navEcms" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                            <li>
+                                <a class="dropdown-item" href="../ECMS/ViewComplaints_ControlRoom.aspx">
+                                    <i class="bi bi-circle"></i><span>View Complaints</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../ECMS/ComplaintStatusReport.aspx">
+                                    <i class="bi bi-circle"></i><span>Complaint Status Report</</span>
+                                </a>
+
+                            </li>
+
+
+
+
+                        </ul>
+
+                    </li>--%>
+
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Logout.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+
+
+
+            </aside>
+        </div>
+
+
+
+
+
+        <div id="Divdepot" runat="server" visible="false">
+            <aside id="sidebarDepot" class="sidebar">
+
+                <ul class="sidebar-nav" id="sidebar-navDepot">
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="#">
+                            <i class="bi bi-card-list"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Depot/SalesProceedReport.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Sales Proceed Report</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Depot/SalesProceedPendingPaymentReport.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Sales Proceeds Pending Report</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Retailer/ChangePassword.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Change Password</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link collapsed" data-bs-target="#tables-navDepot" data-bs-toggle="collapse" href="#">
+                            <i class="bi bi-layout-text-window-reverse"></i><span>Reports</span><i class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                        <ul id="tables-navDepot" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                            <li>
+                                <a class="dropdown-item" href="../Depot/DepotWise_RetailerReport.aspx">
+                                    <i class="bi bi-circle"></i><span>Retailer Report</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../Depot/Sales_ProceedByDepot.aspx">
+                                    <i class="bi bi-circle"></i><span>Sales Proceed By Depot</</span>
+                                </a>
+
+                            </li>
+
+
+
+                        </ul>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Logout.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+
+
+
+            </aside>
+        </div>
+
+
+        <div id="DIVSA" runat="server" visible="false">
+            <aside id="sidebarSA" class="sidebar">
+
+                <ul class="sidebar-nav" id="sidebar-SA">
+
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link collapsed" data-bs-target="#tables-navSA" data-bs-toggle="collapse" href="#">
+                            <i class="bi bi-layout-text-window-reverse"></i><span>Renewal Application</span><i class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                        <ul id="tables-navSA" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                            <li>
+                                <a class="dropdown-item" href="../Renewals/DepartmentApplications.aspx">
+                                    <i class="bi bi-circle"></i><span>Pending Applications</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../Renewals/FWDRenewalApplicationsGrid.aspx">
+                                    <i class="bi bi-circle"></i><span>Forwarded Applications</</span>
+                                </a>
+
+                            </li>
+                        </ul>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Logout.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+
+
+
+            </aside>
+        </div>
+
+        <div id="DivDEPO" runat="server" visible="false">
+            <aside id="sidebarDPEO" class="sidebar">
+
+                <ul class="sidebar-nav" id="sidebar-navDPEO">
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../DPEO/DPEODashboard.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../DPEO/DepeoEventPermission.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Event Permission</span>
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link collapsed" data-bs-target="#tables-navDPEO" data-bs-toggle="collapse" href="#">
+                            <i class="bi bi-layout-text-window-reverse"></i><span>Reports</span><i class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                        <ul id="tables-navDPEO" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                            <li>
+                                <a class="dropdown-item" href="../DPEO_Admin/DistrictRpt.aspx">
+                                    <i class="bi bi-circle"></i><span>District Report</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../DPEO_Admin/DistrictWiseAbstract.aspx">
+                                    <i class="bi bi-circle"></i><span>District Wise Report</</span>
+                                </a>
+
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="../DPEO_Admin/ExciseDistrictRpt.aspx">
+                                    <i class="bi bi-circle"></i><span>Excise District Report</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../DPEO_Admin/ExciseDPEORpt.aspx">
+                                    <i class="bi bi-circle"></i><span>Excise DPEO Report</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../DPEO_Admin/ExciseSHORpt.aspx">
+                                    <i class="bi bi-circle"></i><span>Excise SHO Report</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../DPEO_Admin/ExciseStationRpt.aspx">
+                                    <i class="bi bi-circle"></i><span>Excise Station Report</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/RetailerReport_Individual.aspx">
+                                    <i class="bi bi-circle"></i><span>Retailers Individual
+                                        <br />
+                                        Installment Report</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/RetailersReport.aspx">
+                                    <i class="bi bi-circle"></i><span>Consolidated Installment
+                                        <br />
+                                        Report</</span>
+                                </a>
+
+                            </li>
+
+                        </ul>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#tables-navRen" role="button" aria-expanded="false" aria-controls="tables-navRenewals">
+                            <i class="bi bi-layout-text-window-reverse"></i>
+                            <span>Renewal Application</span>
+                            <i class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                        <ul id="tables-navRen" class="collapse nav-content" data-bs-parent="#sidebar-navSHO">
+                            <li>
+                                <a class="dropdown-item" href="../Renewals/DepartmentApplications.aspx">
+                                    <i class="bi bi-circle"></i><span>Pending Applications</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../Renewals/FWDRenewalApplicationsGrid.aspx">
+                                    <i class="bi bi-circle"></i><span>Forwarded Applications</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../DPEO/DPEORSPEntry.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Retailer Payment Entry</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../DPEO/DPEOEvent_Report.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Event Report</span>
+                        </a>
+                    </li>
+                    <%--  <li><a href="../Renewals/DepartmentApplications.aspx">Renewal Details</a></li>--%>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Retailer/ChangePassword.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Change Password</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Logout.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+
+
+
+            </aside>
+        </div>
+
+        <div id="DIVACJC" runat="server" visible="false">
+            <aside id="sidebarACJC" class="sidebar">
+
+                <ul class="sidebar-nav" id="sidebar-ACJC">
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="#">
+                            <i class="bi bi-card-list"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link collapsed" data-bs-target="#tables-navACJCReports" data-bs-toggle="collapse" href="#">
+                            <i class="bi bi-layout-text-window-reverse"></i><span>Reports</span><i class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                        <ul id="tables-navACJCReports" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/RetailersReport.aspx">
+                                    <i class="bi bi-circle"></i><span>Retailers Installment Report</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/RetailerReport_Individual.aspx">
+                                    <i class="bi bi-circle"></i><span>Retailers Individual<br />
+                                        Installment Report</</span>
+                                </a>
+
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/ExistingRetailerReport.aspx">
+                                    <i class="bi bi-circle"></i><span>Existing Retailers Report</</span>
+                                </a>
+
+                            </li>
+
+                        </ul>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Logout.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+
+
+
+            </aside>
+        </div>
+
+        <div id="DIVTSBCL" runat="server" visible="false">
+            <aside id="sidebarTSBCL" class="sidebar">
+
+                <ul class="sidebar-nav" id="sidebar-TSBCL">
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="#">
+                            <i class="bi bi-card-list"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href=" ../NICAdmin/Create_Retailer.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Create Retailer</span>
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link collapsed" data-bs-target="#tables-navTSBCLReports" data-bs-toggle="collapse" href="#">
+                            <i class="bi bi-layout-text-window-reverse"></i><span>Reports</span><i class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                        <ul id="tables-navTSBCLReports" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                            <li>
+                                <a class="dropdown-item" href="../Retailer/AvailableRetailers.aspx">
+                                    <i class="bi bi-circle"></i><span>Available Retailers</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../Retailer/BankWiseReport.aspx">
+                                    <i class="bi bi-circle"></i><span>BANK WISE REPORT</</span>
+                                </a>
+
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="../Retailer/Ledger_Report.aspx">
+                                    <i class="bi bi-circle"></i><span>Ledger REPORT</</span>
+                                </a>
+
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="../Retailer/SftReport.aspx">
+                                    <i class="bi bi-circle"></i><span>SFT REPORT</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/ExistingRetailerReport.aspx">
+                                    <i class="bi bi-circle"></i><span>Existing Retailers Report</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../Retailer/RetailerWiseReport.aspx">
+                                    <i class="bi bi-circle"></i><span>Retailer Wise Report</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../Retailer/Sft_Ledger_Trans_Pending_Report.aspx">
+                                    <i class="bi bi-circle"></i><span>Pending Report</</span>
+                                </a>
+
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="../Depot/SalesProceedReport.aspx">
+                                    <i class="bi bi-circle"></i><span>Sales Proceeds Report</</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../Depot/SalesProceedPendingPaymentReport.aspx">
+                                    <i class="bi bi-circle"></i><span>Sales Proceeds Pending Report</</span>
+                                </a>
+
+                            </li>
+                        </ul>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link collapsed" data-bs-target="#tables-navTSBCLMaster" data-bs-toggle="collapse" href="#">
+                            <i class="bi bi-layout-text-window-reverse"></i><span>Masters</span><i class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                        <ul id="tables-navTSBCLMaster" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/Retailer_ResetPassword.aspx">
+                                    <i class="bi bi-circle"></i><span>Retailer Rest Password</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../NICAdmin/CTELintegration.aspx">
+                                    <i class="bi bi-circle"></i><span>CTEl Integration</</span>
+                                </a>
+
+                            </li>
+
+
+                        </ul>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Logout.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+
+
+
+            </aside>
+        </div>
+
+
+        <div id="DIVMDTSBCL" runat="server" visible="false">
+            <aside id="sidebarMDTSBCL" class="sidebar">
+
+                <ul class="sidebar-nav" id="sidebar-MDTSBCL">
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Admin/TSBCLDashboard.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+
+
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Logout.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+
+
+
+            </aside>
+        </div>
+
+        <div id="DIVCOMMISIONER" runat="server" visible="false">
+            <aside id="sidebarCOMMISIONER" class="sidebar">
+
+                <ul class="sidebar-nav" id="sidebar-COMMISIONER">
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Admin/EventPermitDashboard.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Signature.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Upload Signature</span>
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Logout.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+
+
+
+            </aside>
+        </div>
+
+
+        <div class="content" id="DIVEODB" runat="server" visible="false">
+
+            <aside id="sidebarEODB" class="sidebar">
+                <div class="content" id="divApplicant" runat="server" visible="true">
+                    <ul class="sidebar-nav" id="sidebar-nav1">
+                        <li class="nav-item">
+                            <a class="nav-link " href="../Index.aspx">
+                                <i class="bi bi-grid"></i>
+                                <span>DashBoard</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="../EODB/Home.aspx">
+                                <i class="bi bi-grid"></i>
+                                <span>Home</span>
+                            </a>
+                        </li>
+
+
+                    </ul>
+
+                </div>
+                <div class="content" id="divDepartment" runat="server" visible="false">
+                    <ul class="sidebar-nav" id="sidebar-nav2">
+                        <li class="nav-item">
+                            <a class="nav-link " href="../Index.aspx">
+                                <i class="bi bi-grid"></i>
+                                <span>DashBoard</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="../EODB/AdminReport.aspx">
+                                <i class="bi bi-grid"></i>
+                                <span>Reports</span>
+                            </a>
+                        </li>
+
+
+                    </ul>
+
+
+                </div>
+
+                <div class="content" id="DivAgent" runat="server" visible="false">
+                    <ul class="sidebar-nav" id="sidebar-navAgent">
+                        <li class="nav-item">
+                            <a class="nav-link " href="../ECMS/Public_Complaint_Form.aspx">
+                                <i class="bi bi-grid"></i>
+                                <span>Complaint Form</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="../Logout.aspx">
+                                <i class="bi bi-grid"></i>
+                                <span>LogOut</span>
+                            </a>
+                        </li>
+
+
+                    </ul>
+
+
+                </div>
+
+                <div class="content" id="divSections" runat="server" visible="false">
+                    <ul class="sidebar-nav" id="sidebar-nav3">
+                        <li class="nav-item">
+                            <a class="nav-link " href="../Index.aspx">
+                                <i class="bi bi-grid"></i>
+                                <span>DashBoard</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="../EODB/ApplicationsReport.aspx">
+                                <i class="bi bi-grid"></i>
+                                <span>Applications </span>
+                            </a>
+                        </li>
+
+
+                    </ul>
+
+
+                </div>
+            </aside>
+
+        </div>
+
+
+        <div id="DIVDC" runat="server" visible="false">
+            <aside id="sidebarDC" class="sidebar">
+
+                <ul class="sidebar-nav" id="sidebar-DC">
+
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link collapsed" data-bs-target="#tables-navDC" data-bs-toggle="collapse" href="#">
+                            <i class="bi bi-layout-text-window-reverse"></i><span>Renewal Application</span><i class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                        <ul id="tables-navDC" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                            <li>
+                                <a class="dropdown-item" href="../Renewals/DepartmentApplications.aspx">
+                                    <i class="bi bi-circle"></i><span>Pending Applications</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../Renewals/FWDRenewalApplicationsGrid.aspx">
+                                    <i class="bi bi-circle"></i><span>Forwarded Applications</</span>
+                                </a>
+
+                            </li>
+                        </ul>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Logout.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+
+
+
+            </aside>
+        </div>
+
+
+
+        <div id="DIVOS" runat="server" visible="false">
+            <aside id="sidebarOS" class="sidebar">
+
+                <ul class="sidebar-nav" id="sidebar-OS">
+
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link collapsed" data-bs-target="#tables-navOS" data-bs-toggle="collapse" href="#">
+                            <i class="bi bi-layout-text-window-reverse"></i><span>Renewal Application</span><i class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                        <ul id="tables-navOS" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                            <li>
+                                <a class="dropdown-item" href="../Renewals/DepartmentApplications.aspx">
+                                    <i class="bi bi-circle"></i><span>Pending Applications</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../Renewals/FWDRenewalApplicationsGrid.aspx">
+                                    <i class="bi bi-circle"></i><span>Forwarded Applications</</span>
+                                </a>
+
+                            </li>
+                        </ul>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Logout.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+
+
+
+            </aside>
+        </div>
+
+        <div id="DIVSection" runat="server" visible="false">
+            <aside id="sidebarSection" class="sidebar">
+
+                <ul class="sidebar-nav" id="sidebar-Section">
+
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link collapsed" data-bs-target="#tables-navSection" data-bs-toggle="collapse" href="#">
+                            <i class="bi bi-layout-text-window-reverse"></i><span>Renewal Application</span><i class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                        <ul id="tables-navSection" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                            <li>
+                                <a class="dropdown-item" href="../Renewals/DepartmentApplications.aspx">
+                                    <i class="bi bi-circle"></i><span>Pending Applications</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../Renewals/FWDRenewalApplicationsGrid.aspx">
+                                    <i class="bi bi-circle"></i><span>Forwarded Applications</</span>
+                                </a>
+
+                            </li>
+                        </ul>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Logout.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+
+
+
+            </aside>
+        </div>
+
+
+        <div id="DIVJCDSL" runat="server" visible="false">
+            <aside id="sidebarJCDSL" class="sidebar">
+
+                <ul class="sidebar-nav" id="sidebar-JCDSL">
+
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link collapsed" data-bs-target="#tables-navJCDSL" data-bs-toggle="collapse" href="#">
+                            <i class="bi bi-layout-text-window-reverse"></i><span>Renewal Application</span><i class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                        <ul id="tables-navJCDSL" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                            <li>
+                                <a class="dropdown-item" href="../Renewals/DepartmentApplications.aspx">
+                                    <i class="bi bi-circle"></i><span>Pending Applications</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../Renewals/FWDRenewalApplicationsGrid.aspx">
+                                    <i class="bi bi-circle"></i><span>Forwarded Applications</</span>
+                                </a>
+
+                            </li>
+                        </ul>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="../Logout.aspx">
+                            <i class="bi bi-card-list"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+
+
+
+            </aside>
+        </div>
+
+
+        <%--        <div class="navbar-collapse collapse" id="DIVSA" runat="server" visible="false">
+                        <ul class="nav navbar-nav">
+                            <li><a href="../Renewals/DepartmentApplications.aspx">Renewal Details</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li style="float: right; margin-right: 20px;"><a href="../Logout.aspx">LogOut</a></li>
+                        </ul>
+                    </div>
+                    <div class="navbar-collapse collapse" id="DIVOS" runat="server" visible="false">
+                        <ul class="nav navbar-nav">
+                            <li><a href="../Renewals/DepartmentApplications.aspx">Renewal Details</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li style="float: right; margin-right: 20px;"><a href="../Logout.aspx">LogOut</a></li>
+                        </ul>
+                    </div>
+                     <div class="navbar-collapse collapse" id="DIVSection" runat="server" visible="false">
+                        <ul class="nav navbar-nav">
+                            <li><a href="../Renewals/DepartmentApplications.aspx">Renewal Details</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li style="float: right; margin-right: 20px;"><a href="../Logout.aspx">LogOut</a></li>
+                        </ul>
+                    </div>--%>
+
+
+
+        <!-- End Sidebar-->
+        <main id="main" class="main">
+
+            <section class="section dashboard">
+                <div class="container-fluid content-pad" style="padding-bottom: 0px; margin-top: 10px;">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                </div>
+
+                <div class="container-fluid content-pad" style="padding-bottom: 0px; margin-top: 10px;">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+                </div>
+            </section>
+
+        </main>
+    </form>
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="copyright">
+            &copy; Copyright <strong><span>NIC</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+            Designed by <a href="https://bootstrapmade.com/">NIC</a>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <script src="../NewStyles/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <%--    <script src="../NewStyles/assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="../NewStyles/assets/vendor/echarts/echarts.min.js"></script>
+    <script src="../NewStyles/assets/vendor/quill/quill.min.js"></script>
+    <script src="../NewStyles/assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="../NewStyles/assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="../NewStyles/assets/vendor/php-email-form/validate.js"></script>--%>
+    <script src="../NewStyles/assets/vendor/bootstrap/js/bootstrap.js"></script>
+    <!-- Template Main JS File -->
+    <script src="../NewStyles/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../NewStyles/assets/js/main.js"></script>
+    <!-- Vendor JS Files -->
+    
+   
+  <%--  <script src="../NewStyles/assets/vendor/bootstrap/js/bootstrap.js"></script>--%>
+    <!-- Template Main JS File -->
+   <%-- <script src="../NewStyles/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+   --%>
+
+    <!-- Custom JS for Sidebar Toggle -->
+    <%--<script type="text/javascript">
+        document.getElementById('toggle-sidebar-btn').addEventListener('click', function () {
+            debugger;
+            var sidebar = document.getElementById('sidebar');
+            var isActive = sidebar.classList.contains('active');
+
+            // Only toggle based on the current state to prevent flickering
+            if (!isActive) {
+                sidebar.classList.add('active');
+            } else {
+                sidebar.classList.remove('active');
+            }
+        });
+    </script>--%>
+</body>
+
+</html>

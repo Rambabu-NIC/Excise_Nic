@@ -1,0 +1,67 @@
+﻿.block {
+    border-radius: 5px;
+    border: 1px #ABABAB solid;
+    background-color: #fff;
+    padding: 10px !important;
+    margin-bottom: 22px;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+}
+
+.count-label {
+    font-size: 14px;
+    font-weight: normal;
+    line-height:  20px; margin-top:20px !important;
+    text-align: center;
+}
+
+.count-bdr-color-1 {
+    border: 10px solid #0077bb;
+}
+
+.count-txt-color-1 {
+    color: #0077bb;
+}
+
+.count-bdr-color-2 {
+    border: 10px solid #c54b4b;
+}
+
+.count-txt-color-2 {
+    color: #c54b4b;
+}
+
+.count-bdr-color-3 {
+    border: 10px solid #49c14b;
+}
+
+.count-txt-color-3 {
+    color: #49c14b;
+}
+
+.count-bdr-color-4 {
+    border: 10px solid #8a6d3b;
+}
+
+.count-txt-color-4 {
+    color: #8a6d3b;
+}
+
+.count-circle {
+    border-radius: 100%;
+    Width: 100px;
+    height:  100px;
+    margin: auto;
+    position: relative;
+    top: 10px;
+    left: 0px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.cont {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 30%;
+}
